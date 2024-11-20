@@ -1,0 +1,108 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Vedant Khandelwal
+    - name: Contact Information
+      value: "+1-(803)-665-6729 | vedant@email.sc.edu"
+    - name: LinkedIn
+      value: "<a href='https://www.linkedin.com/in/khvedant/'>khvedant</a>"
+    - name: GitHub
+      value: "<a href='https://github.com/khvedant02'>khvedant02</a>"
+    - name: Location
+      value: Columbia, South Carolina - 29201, United States
+    - name: Expertise
+      value: Generative AI, Knowledge Graphs, Deep Reinforcement Learning
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Doctor of Philosophy, Computer Science
+      institution: University of South Carolina
+      year: 01/2021 - Present
+      description:
+        - "Advisors: Forest Agostinelli, Amit Sheth."
+        - "Relevant Coursework: Artificial Intelligence, Reinforcement Learning & Search, Trusted AI."
+        - "Award: Best Poster Award at DISCOVER USC 2024, 'Foundation Model For Pathfinding Problems.' (> 500 Participants)"
+    - title: Bachelor of Technology, Computer Science & Engineering
+      institution: International Institute of Information Technology, Naya Raipur
+      year: 05/2020
+      description:
+        - "Relevant Coursework: Data Structures & Algorithms, Data Science, Artificial Intelligence."
+        - "Award: Institute Gold Medal for Best All-Round Performance."
+
+- title: Work Experience
+  type: time_table
+  contents:
+    - title: Graduate Research and Teaching Assistant
+      institution: Artificial Intelligence Institute, University of South Carolina
+      year: 01/2021 - Present
+      description:
+        - "Developing a foundation model generalizable to pathfinding problems."
+        - "Integrating Large Language Models with Knowledge Graphs for safe conversational agents."
+        - "Teaching Assistant: Database System Design (Spring 2021), Artificial Intelligence (Spring 2024)."
+    - title: Research Affiliate
+      institution: Artificial Intelligence Institute, University of South Carolina
+      year: 12/2019 - 07/2020
+      description:
+        - "Developed knowledge-infused machine learning for psychological impacts of pandemics."
+        - "Analyzed 12 billion COVID-19 tweets for spatiotemporal effects and policy studies."
+
+- title: Projects
+  type: time_table
+  contents:
+    - title: Foundation Model for Pathfinding Problems
+      description:
+        - "Developing foundational models capable of generalizing across pathfinding problems."
+        - "Achieved generalizability across goals and domains of varying sizes."
+    - title: Safe Mental Health Conversational Agents
+      description:
+        - "Developed AI conversational agents for mental health using generative AI and knowledge graphs."
+        - "Enhanced controlled and personalized patient interactions."
+    - title: Knowledge Graph and Generative AI-Based Scholarly Article Retrieval
+      description:
+        - "Improved systematic review efficiency with knowledge-infused AI for query expansion."
+        - "Reduced scholarly article retrieval time by 90%."
+
+- title: Publications
+  type: list
+  contents:
+    - "[C.1] A Domain-Agnostic Neurosymbolic Approach for Big Social Data Analysis – IEEE Big Data 2024."
+    - "[C.3] GEAR-Up: Generative AI for Systematic Reviews – AAAI 2024."
+
+- title: Tutorials and Guest Lectures
+  type: time_table
+  contents:
+    - title: Neuro-Symbolic AI for Deep Analysis of Social Media Big Data
+      institution: IEEE International Conference on Big Data
+      year: December 2024
+
+- title: Skills
+  type: list
+  contents:
+    - "Programming Languages: Python, C, SQL, Prolog, PDDL."
+    - "Frameworks & Libraries: PyTorch, Huggingface, Pandas, Numpy, Keras."
+    - "Tools: GitHub, Streamlit, Protege, Neo4j."
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2024
+      items:
+        - "Best Poster Award at DISCOVER USC."
+    - year: 2020
+      items:
+        - "Institute Gold Medal for Best All-Round Performance."
+
+- title: Academic Service
+  type: nested_list
+  contents:
+    - title: Reviewer
+      items:
+        - "IEEE IoT Journal 2025"
+        - "ICLR 2025"
+        - "ICAPS 2024"
+    - title: Program Committee Member
+      items:
+        - "ICAPS 2024"
+        - "CySoc 2024"

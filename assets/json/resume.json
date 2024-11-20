@@ -1,0 +1,113 @@
+{
+  "basics": {
+    "name": "Vedant Khandelwal",
+    "label": "Doctoral Student",
+    "image": "",
+    "email": "vedant@email.sc.edu",
+    "phone": "+1-(803)-665-6729",
+    "url": "https://aiisc.ai/",
+    "summary": "Doctoral Student at the University of South Carolina with expertise in Generative AI, Knowledge Graphs, and Deep Reinforcement Learning, working on solving pathfinding problems and developing safe conversational agents.",
+    "location": {
+      "address": "",
+      "postalCode": "29201",
+      "city": "Columbia",
+      "countryCode": "US",
+      "region": "South Carolina"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "khvedant",
+        "url": "https://www.linkedin.com/in/khvedant/"
+      },
+      {
+        "network": "GitHub",
+        "username": "khvedant02",
+        "url": "https://github.com/khvedant02"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "",
+        "url": "https://scholar.google.com/citations?user=4VmpXbAAAAAJ&hl=en"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Artificial Intelligence Institute, University of South Carolina",
+      "position": "Graduate Research and Teaching Assistant",
+      "url": "https://aiisc.ai/",
+      "startDate": "2021-01-01",
+      "endDate": "Present",
+      "summary": "Developing a foundation model that can generalize with little or no fine-tuning to pathfinding problems and applications. Working on the integration of Large Language Models and Knowledge graphs to build safe mental health conversational agents. Teaching Assistant for Database System Design and Artificial Intelligence courses.",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of South Carolina",
+      "location": "Columbia, South Carolina",
+      "url": "https://sc.edu/",
+      "area": "Computer Science",
+      "studyType": "PhD",
+      "startDate": "2021-01-01",
+      "endDate": "Present",
+      "score": "",
+      "courses": ["Artificial Intelligence", "Reinforcement Learning & Search", "Trusted AI"]
+    },
+    {
+      "institution": "International Institute of Information Technology, Naya Raipur",
+      "location": "Chhattisgarh, India",
+      "url": "https://www.iiitnr.ac.in/",
+      "area": "Computer Science & Engineering",
+      "studyType": "Bachelor of Technology",
+      "startDate": "2016-01-01",
+      "endDate": "2020-05-01",
+      "score": "",
+      "courses": ["Data Structures & Algorithms", "Data Science", "Artificial Intelligence", "Discrete Math", "Statistics & Probability"]
+    }
+  ],
+  "publications": [
+    {
+      "name": "A Domain-Agnostic Neurosymbolic Approach for Big Social Data Analysis: Evaluating Mental Health Sentiment on Social Media during COVID-19",
+      "publisher": "IEEE International Conference on Big Data",
+      "releaseDate": "2024-01-01",
+      "url": "https://ieeexplore.ieee.org/",
+      "summary": "This publication explores the application of a neurosymbolic approach to analyze mental health sentiments on social media platforms during the COVID-19 pandemic."
+    },
+    {
+      "name": "Specifying goals to deep neural networks with answer set programming",
+      "publisher": "ICAPS",
+      "releaseDate": "2024-01-01",
+      "url": "https://ojs.aaai.org/index.php/ICAPS/article/view/31454",
+      "summary": "This work discusses the integration of answer set programming with deep neural networks to specify goals in computational problems."
+    },
+    {
+      "name": "GEAR-Up: Generative AI and External Knowledge-based Retrieval Upgrading Scholarly Article Searches for Systematic Reviews",
+      "publisher": "AAAI Conference on Artificial Intelligence",
+      "releaseDate": "2024-01-01",
+      "url": "https://arxiv.org/pdf/2312.09948.pdf",
+      "summary": "Developed an AI conversational agent for personalized mental health support, improving and controlling patient interactions using generative AI and clinical knowledge graphs."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming",
+      "level": "Advanced",
+      "icon": "",
+      "keywords": ["Python", "C", "SQL", "Prolog", "Clingo", "PDDL"]
+    },
+    {
+      "name": "Frameworks and Libraries",
+      "level": "Advanced",
+      "icon": "",
+      "keywords": ["Popper", "PyTorch", "Huggingface", "Pandas", "Numpy", "Matplotlib", "Keras"]
+    },
+    {
+      "name": "Software & Tools",
+      "level": "Advanced",
+      "icon": "",
+      "keywords": ["GitHub", "Anaconda", "MS Office", "MATLAB", "Protege", "Neo4j", "Streamlit"]
+    }
+  ]
+}
