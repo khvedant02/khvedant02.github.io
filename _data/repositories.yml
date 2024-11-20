@@ -1,14 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - khvednat02
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - khvedant02/khvedant02.github.io
+  - khvedant02/Neurosymbolic-Mental-Health-Monitoring-COVID19
