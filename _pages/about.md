@@ -16,13 +16,10 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Welcome to my personal website! I am a PhD student specializing in artificial intelligence, with a focus on generative models and knowledge graph integration. My research interests lie at the intersection of technology and societal impact, particularly how AI can enhance mental health support systems and improve decision-making processes in dynamic environments.
+I am a PhD candidate at the University of South Carolina, part of the Artificial Intelligence Institute (AIISC). Under the guidance of Dr. Amit Sheth and Dr. Forest Agostinelli, my research spans Generative AI, Knowledge Graphs, and Deep Reinforcement Learning. I obtained my Bachelor's degree in Computer Science and Engineering from the International Institute of Information Technology in Naya Raipur, India, in 2020, where I graduated with distinction.
 
-You can find some of my academic contributions and projects on the [publications page](/publications/).
+My research ambition is to develop AI technologies that solve complex and dynamic problems. I focus on designing foundational models that effectively address pathfinding problems and integrating large language models with knowledge graphs to build secure and effective mental health conversational agents. My contributions in generative AI have significantly enhanced the efficiency of systematic reviews in academic research, notably reducing the time required for scholarly article retrieval by up to 90%.
 
-### Connect with Me
+My academic involvement extends beyond research. I have actively participated as a teaching assistant for courses such as Artificial Intelligence and Database System Design and am a regular reviewer for leading conferences and journals including ICLR, ICAPS, and IEEE Internet Computing.
 
-- [![LinkedIn](https://academicons.github.io/images/linkedin.svg)](https://www.linkedin.com/in/khvedant/)
-- [![Google Scholar](https://academicons.github.io/images/google-scholar.svg)](https://scholar.google.com/citations?user=4VmpXbAAAAAJ&hl=en)
-
-
+For additional information about my projects and publications, visit my [LinkedIn profile](https://www.linkedin.com/in/khvedant/) and [Google Scholar page](https://scholar.google.com/citations?user=4VmpXbAAAAAJ&hl=en).
