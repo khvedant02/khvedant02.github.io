@@ -16,7 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a PhD candidate at the University of South Carolina, part of the Artificial Intelligence Institute (AIISC). Under the guidance of Dr. Amit Sheth and Dr. Forest Agostinelli, my research spans Generative AI, Knowledge Graphs, and Deep Reinforcement Learning. I obtained my Bachelor's degree in Computer Science and Engineering from the International Institute of Information Technology in Naya Raipur, India, in 2020, where I graduated with distinction.
+I am a PhD student at Artificial Intelligence Institute (AIISC), University of South Carolina. I am co-advised by [Dr. Amit Sheth](https://amit.aiisc.ai/) and [Dr. Forest Agostinelli](https://cse.sc.edu/~foresta/). My research interests include Generative AI, Knowledge Graphs, and Deep Reinforcement Learning. I obtained my Bachelor's degree in Computer Science and Engineering from the International Institute of Information Technology in Naya Raipur, India, in 2020.
 
 My research ambition is to develop AI technologies that solve complex and dynamic problems. I focus on designing foundational models that effectively address pathfinding problems and integrating large language models with knowledge graphs to build secure and effective mental health conversational agents. My contributions in generative AI have significantly enhanced the efficiency of systematic reviews in academic research, notably reducing the time required for scholarly article retrieval by up to 90%.
 
