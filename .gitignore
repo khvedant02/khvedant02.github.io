@@ -26,3 +26,4 @@ package-lock.json
 .agent/
 
 AGENTS.md
+CHANGES.md
