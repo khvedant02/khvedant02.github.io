@@ -34,7 +34,7 @@ author:
 
   # Academic websites
   academia         : # URL
-  arxiv            : "https://arxiv.org/search/cs?searchtype=author&query=Khandelwal,+V"
+  arxiv            : "https://arxiv.org/search/cs?query=Khandelwal%2C+Vedant&searchtype=author&abstracts=show&order=-announced_date_first&size=50"
   googlescholar    : "https://scholar.google.com/citations?user=4VmpXbAAAAAJ&hl=en"
   inspire-hep      : # URL
   impactstory      : # URL
