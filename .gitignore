@@ -21,3 +21,8 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Ignore AI agent work logs
+.agent/
+
+AGENTS.md
