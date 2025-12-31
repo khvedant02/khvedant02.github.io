@@ -1,6 +1,5 @@
+--- 
 ---
----
-
 /*
  * This file controls what is imported from /_sass
  *
@@ -9,35 +8,248 @@
  */
 
 @import
-    "vendor/breakpoint/breakpoint",
+"vendor/breakpoint/breakpoint",
 
-    "themes",
-    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+"themes",
+"theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+"theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
-    "include/mixins",
-    "vendor/susy/susy",
+"include/mixins",
+"vendor/susy/susy",
 
-    "layout/reset",
-    "layout/base",
+"layout/reset",
+"layout/base",
 
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
+"include/utilities",
+"layout/tables",
+"layout/buttons",
+"layout/notices",
+"layout/masthead",
+"layout/navigation",
+"layout/footer",
+"syntax",
 
-    "layout/forms",
+"layout/forms",
 
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv",
+"layout/page",
+"layout/archive",
+"layout/sidebar",
+"layout/json_cv",
 
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
+"vendor/font-awesome/fontawesome",
+"vendor/font-awesome/solid",
+"vendor/font-awesome/brands"
 ;
+
+/* Custom styles */
+.page__content {
+  p {
+    text-align: justify;
+  }
+}
+
+/* Publication Cards */
+.publications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.publication-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: transparent;
+  border: 1px solid var(--global-border-color, #e0e0e0);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--global-link-color, #0066cc);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.publication-card__image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f5f5f5;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  a:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.publication-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.publication-card__title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--global-link-color);
+    }
+  }
+}
+
+.publication-card__authors {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.publication-card__venue {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+
+  em {
+    font-style: normal;
+    opacity: 1;
+  }
+}
+
+.publication-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--global-link-color);
+  background: rgba(128, 128, 128, 0.1);
+  border: 1px solid var(--global-border-color);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  i {
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    background: var(--global-link-color, #0066cc);
+    color: #fff;
+    border-color: var(--global-link-color, #0066cc);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Patents Section */
+.patents-list {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.patent-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-border-color, #e0e0e0);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.patent-citation {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+
+  strong {
+    color: var(--global-text-color, #333);
+  }
+}
+
+.patent-link {
+  color: var(--global-link-color, #0066cc);
+  text-decoration: none;
+  margin-left: 0.5rem;
+
+  i {
+    font-size: 0.85rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Talks Section */
+.talks-list {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.talk-item {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-border-color, #e0e0e0);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.talk-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  strong {
+    color: var(--global-link-color);
+  }
+}
+
+.talk-details {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.talk-authors {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}

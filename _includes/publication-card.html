@@ -1,0 +1,72 @@
+{% include base_path %}
+
+{% if post.id %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+{% assign title = post.title %}
+{% endif %}
+
+<div class="publication-card">
+    <div class="publication-card__image">
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">
+            <img src="{{ base_path }}/images/publication-placeholder.png" alt="{{ title }}">
+        </a>
+    </div>
+
+    <div class="publication-card__content">
+        <h3 class="publication-card__title">
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        </h3>
+
+        <p class="publication-card__authors">
+            {% if post.citation %}
+            {% assign citation_parts = post.citation | split: '(' %}
+            {% if citation_parts[0] %}
+            {{ citation_parts[0] | strip }}
+            {% endif %}
+            {% endif %}
+        </p>
+
+        <p class="publication-card__venue">
+            <em>{{ post.venue }}</em>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
+        </p>
+
+        <div class="publication-card__links">
+            {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" class="publication-link" target="_blank">
+                <i class="fas fa-file-pdf"></i> PDF
+            </a>
+            {% endif %}
+
+            {% if post.codeurl %}
+            <a href="{{ post.codeurl }}" class="publication-link" target="_blank">
+                <i class="fab fa-github"></i> Code
+            </a>
+            {% endif %}
+
+            {% if post.slidesurl %}
+            <a href="{{ post.slidesurl }}" class="publication-link" target="_blank">
+                <i class="fas fa-presentation"></i> Slides
+            </a>
+            {% endif %}
+
+            {% if post.posterurl %}
+            <a href="{{ post.posterurl }}" class="publication-link" target="_blank">
+                <i class="fas fa-image"></i> Poster
+            </a>
+            {% endif %}
+
+            {% if post.videourl %}
+            <a href="{{ post.videourl }}" class="publication-link" target="_blank">
+                <i class="fas fa-video"></i> Video
+            </a>
+            {% endif %}
+
+            {% if post.audiourl %}
+            <a href="{{ post.audiourl }}" class="publication-link" target="_blank">
+                <i class="fas fa-microphone"></i> Audio
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
