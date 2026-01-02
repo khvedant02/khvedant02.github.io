@@ -21,8 +21,9 @@
         <p class="publication-card__authors">
             {% if post.citation %}
             {% assign citation_parts = post.citation | split: '(' %}
+            {% assign bold_name = '<strong>' | append: site.author.name | append: '</strong>' %}
             {% if citation_parts[0] %}
-            {{ citation_parts[0] | strip }}
+            {{ citation_parts[0] | strip | replace: site.author.name, bold_name }}
             {% endif %}
             {% endif %}
         </p>
