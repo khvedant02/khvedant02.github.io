@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Placeholder for system comparison table">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f6fb" />
+      <stop offset="100%" stop-color="#e7ecf5" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)" />
+  <rect x="80" y="120" width="1040" height="460" rx="24" fill="#ffffff" stroke="#c4cfe0" stroke-width="4" />
+  <text x="600" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#20314b">Table 3 Placeholder</text>
+  <text x="600" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#35455f">Computer science comparison across systems</text>
+  <text x="600" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#56657b">Replace this SVG with the actual table image</text>
+  <g stroke="#9aa9bf" stroke-width="2">
+    <line x1="180" y1="420" x2="1020" y2="420" />
+    <line x1="180" y1="480" x2="1020" y2="480" />
+    <line x1="180" y1="540" x2="1020" y2="540" />
+    <line x1="400" y1="380" x2="400" y2="560" />
+    <line x1="650" y1="380" x2="650" y2="560" />
+    <line x1="860" y1="380" x2="860" y2="560" />
+  </g>
+</svg>
