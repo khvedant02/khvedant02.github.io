@@ -6,10 +6,18 @@
 {% assign title = post.title %}
 {% endif %}
 
+{% if post.header.teaser %}
+{% assign card_image = post.header.teaser %}
+{% elsif post.header.image %}
+{% assign card_image = post.header.image %}
+{% else %}
+{% assign card_image = "/images/publication-placeholder.png" %}
+{% endif %}
+
 <div class="publication-card">
     <div class="publication-card__image">
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">
-            <img src="{{ base_path }}/images/publication-placeholder.png" alt="{{ title }}">
+            <img src="{% if card_image contains '://' %}{{ card_image }}{% elsif card_image contains '/images/' %}{{ card_image | prepend: base_path }}{% else %}{{ card_image | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="{{ title }}">
         </a>
     </div>
 

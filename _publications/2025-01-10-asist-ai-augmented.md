@@ -8,6 +8,8 @@ date: 2025-01-10
 venue: 'Proceedings of the Association for Information Science and Technology (ASIS&T)'
 citation: 'Valerie Vera*, Vedant Khandelwal*, Kaushik Roy, Ritvik Garimella, Harshul Surana, and Amit Sheth. (2025). &quot;AI-Augmented Search for Systematic Reviews: A Comparative Analysis.&quot; <i>Proceedings of the Association for Information Science and Technology</i> 62, no. 1: 705-717. (* Equal contribution)'
 paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
+header:
+  teaser: /images/publications/ai-augmented-search/figure1-architecture.png
 ---
 
 <div class="paper-ai-augmented-search">
@@ -77,10 +79,10 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
             </tbody>
           </table>
         </div>
-        <figcaption>Table 3. NeuroLit Navigator is the only system reporting reproducible, interpretable Boolean queries while achieving higher relevance in the computer science setting.</figcaption>
+        <figcaption>Table 3. NeuroLit Navigator is the only system reporting reproducible, interpretable Boolean queries while achieving higher relevance in the computer science domain.</figcaption>
       </figure>
 
-      <p class="paper-reference">In the computer science evaluation, NeuroLit Navigator is the only tool that supports reproducible and interpretable query logic (Table 3).</p>
+      <p class="paper-reference">In the evaluation, NeuroLit Navigator is the only tool that supports reproducible and interpretable query logic (Table 3).</p>
     </section>
 
     <section class="paper-section">
@@ -216,7 +218,11 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
     .paper-ai-augmented-search .paper-figure figcaption {
       margin-top: 0.75rem;
       font-size: 0.95rem;
-      color: var(--global-text-color-light);
+      color: var(--paper-ink);
+    }
+
+    .paper-ai-augmented-search .paper-table-wrap + figcaption {
+      color: var(--paper-ink);
     }
 
     .paper-ai-augmented-search .paper-table-wrap {
@@ -278,15 +284,21 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
         return;
       }
 
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const root = document.documentElement;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const anchors = [0.03, 0.1, 0.35, 0.6, 0.85, 0.96];
+      const stageFractions = [0.1, 0.35, 0.6, 0.85];
+      const topRatios = [0.26, 0.28, 0.32, 0.38, 0.44, 0.47];
+      const bottomRatios = [0.74, 0.72, 0.68, 0.62, 0.56, 0.53];
+      const stageDropRates = [0.2, 0.3, 0.22];
+
       let width = 0;
       let height = 0;
-      let nodes = [];
+      let papers = [];
+      let staticPapers = [];
       let gradient = null;
       let animationId = null;
-      let pulseId = null;
-      let pulses = [];
+      let lastSpawnAt = 0;
       let palette = null;
 
       const parseColor = (value) => {
@@ -322,33 +334,233 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
       const mixColor = (base, accent, amount) =>
         base.map((channel, index) => Math.round(channel + (accent[index] - channel) * amount));
 
+      const lerp = (start, end, t) => start + (end - start) * t;
+
+      const interpolateByAnchors = (values, xRatio) => {
+        if (xRatio <= anchors[0]) {
+          return values[0];
+        }
+        for (let i = 1; i < anchors.length; i += 1) {
+          if (xRatio <= anchors[i]) {
+            const t = (xRatio - anchors[i - 1]) / (anchors[i] - anchors[i - 1]);
+            return lerp(values[i - 1], values[i], t);
+          }
+        }
+        return values[values.length - 1];
+      };
+
+      const topAt = (xRatio) => height * interpolateByAnchors(topRatios, xRatio);
+      const bottomAt = (xRatio) => height * interpolateByAnchors(bottomRatios, xRatio);
+
       const updatePalette = () => {
         const styles = getComputedStyle(root);
         const bgValue = styles.getPropertyValue("--global-bg-color");
         const accentValue = styles.getPropertyValue("--global-link-color");
+        const textValue = styles.getPropertyValue("--global-text-color");
         const bgColor = parseColor(bgValue) || [238, 238, 238];
         const accentColor = parseColor(accentValue) || [57, 62, 70];
-        const start = mixColor(bgColor, accentColor, 0.06);
-        const end = mixColor(bgColor, accentColor, 0.12);
-        palette = { bgColor, accentColor, start, end };
+        const textColor = parseColor(textValue) || [45, 45, 45];
+        const start = mixColor(bgColor, accentColor, 0.05);
+        const end = mixColor(bgColor, accentColor, 0.11);
+        palette = {
+          laneFill: mixColor(bgColor, accentColor, 0.16),
+          laneStroke: mixColor(bgColor, accentColor, 0.28),
+          stageDot: mixColor(bgColor, accentColor, 0.4),
+          paperColor: mixColor(bgColor, accentColor, 0.55),
+          paperEdge: mixColor(bgColor, textColor, 0.35),
+          excludedColor: mixColor(bgColor, textColor, 0.35),
+          excludedEdge: mixColor(bgColor, textColor, 0.55),
+          start,
+          end
+        };
         gradient = ctx.createLinearGradient(0, 0, width, height);
-        gradient.addColorStop(0, toRgba(start, 0.96));
-        gradient.addColorStop(1, toRgba(end, 0.96));
+        gradient.addColorStop(0, toRgba(start, 0.95));
+        gradient.addColorStop(1, toRgba(end, 0.95));
       };
 
-      const createNodes = () => {
-        const baseCount = Math.max(28, Math.min(56, Math.round(Math.sqrt(width * height) / 18)));
-        nodes = Array.from({ length: baseCount }, (_, index) => {
-          const angle = Math.random() * Math.PI * 2;
-          const speed = 0.18 + Math.random() * 0.35;
-          return {
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: Math.cos(angle) * speed,
-            vy: Math.sin(angle) * speed,
-            size: 1.1 + Math.random() * 1.9
-          };
+      const createPaper = (xRatio = anchors[0], isStatic = false) => {
+        const top = topAt(xRatio);
+        const bottom = bottomAt(xRatio);
+        const laneSpan = bottom - top;
+        return {
+          x: width * xRatio,
+          y: top + laneSpan * (0.25 + Math.random() * 0.5),
+          vx: 0.55 + Math.random() * 0.4,
+          vy: (Math.random() - 0.5) * 0.14,
+          wobble: Math.random() * Math.PI * 2,
+          size: 4 + Math.random() * 2,
+          alpha: 0.2 + Math.random() * 0.18,
+          stage: 0,
+          active: !isStatic || xRatio < 0.78 || Math.random() > 0.45
+        };
+      };
+
+      const refreshStaticPapers = () => {
+        staticPapers = Array.from({ length: 22 }, (_, index) => {
+          const t = index / 21;
+          const ratio = lerp(anchors[0] + 0.01, anchors[anchors.length - 1] - 0.01, t);
+          return createPaper(ratio, true);
         });
+      };
+
+      const drawChannel = () => {
+        if (!palette) {
+          return;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(width * anchors[0], topAt(anchors[0]));
+        for (let i = 1; i < anchors.length; i += 1) {
+          ctx.lineTo(width * anchors[i], topAt(anchors[i]));
+        }
+        for (let i = anchors.length - 1; i >= 0; i -= 1) {
+          ctx.lineTo(width * anchors[i], bottomAt(anchors[i]));
+        }
+        ctx.closePath();
+        ctx.fillStyle = toRgba(palette.laneFill, 0.16);
+        ctx.fill();
+
+        ctx.strokeStyle = toRgba(palette.laneStroke, 0.3);
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(width * anchors[0], topAt(anchors[0]));
+        for (let i = 1; i < anchors.length; i += 1) {
+          ctx.lineTo(width * anchors[i], topAt(anchors[i]));
+        }
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(width * anchors[0], bottomAt(anchors[0]));
+        for (let i = 1; i < anchors.length; i += 1) {
+          ctx.lineTo(width * anchors[i], bottomAt(anchors[i]));
+        }
+        ctx.stroke();
+
+        stageFractions.forEach((ratio) => {
+          const stageX = width * ratio;
+          const top = topAt(ratio);
+          const bottom = bottomAt(ratio);
+          const centerY = (top + bottom) / 2;
+          ctx.strokeStyle = toRgba(palette.stageDot, 0.18);
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(stageX, top - 20);
+          ctx.lineTo(stageX, bottom + 20);
+          ctx.stroke();
+
+          ctx.fillStyle = toRgba(palette.stageDot, 0.24);
+          ctx.beginPath();
+          ctx.arc(stageX, centerY, 3, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      };
+
+      const drawPaper = (paper) => {
+        if (!palette || paper.alpha <= 0) {
+          return;
+        }
+        const widthBox = paper.size * 1.45;
+        const heightBox = paper.size;
+        const fillColor = paper.active ? palette.paperColor : palette.excludedColor;
+        const edgeColor = paper.active ? palette.paperEdge : palette.excludedEdge;
+        ctx.fillStyle = toRgba(fillColor, paper.alpha);
+        ctx.fillRect(
+          paper.x - widthBox / 2,
+          paper.y - heightBox / 2,
+          widthBox,
+          heightBox
+        );
+        ctx.fillStyle = toRgba(edgeColor, paper.alpha * 0.8);
+        ctx.fillRect(
+          paper.x + widthBox * 0.05,
+          paper.y - heightBox / 2,
+          widthBox * 0.32,
+          heightBox * 0.25
+        );
+      };
+
+      const drawFrame = (currentPapers) => {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+        drawChannel();
+        currentPapers.forEach(drawPaper);
+      };
+
+      const updatePaper = (paper) => {
+        if (paper.active) {
+          paper.x += paper.vx;
+          paper.wobble += 0.02;
+          const xRatio = Math.max(
+            anchors[0],
+            Math.min(anchors[anchors.length - 1], paper.x / width)
+          );
+          const top = topAt(xRatio) + 2;
+          const bottom = bottomAt(xRatio) - 2;
+          const center = (top + bottom) / 2;
+
+          paper.y += paper.vy + Math.sin(paper.wobble) * 0.07;
+          paper.y += (center - paper.y) * 0.03;
+          if (paper.y < top) {
+            paper.y = top;
+            paper.vy = Math.abs(paper.vy) * 0.6;
+          }
+          if (paper.y > bottom) {
+            paper.y = bottom;
+            paper.vy = -Math.abs(paper.vy) * 0.6;
+          }
+
+          while (
+            paper.stage < stageFractions.length - 1 &&
+            xRatio >= stageFractions[paper.stage + 1]
+          ) {
+            if (Math.random() < stageDropRates[paper.stage]) {
+              paper.active = false;
+              paper.vx *= 0.24;
+              paper.vy = 0.35 + Math.random() * 0.35;
+              break;
+            }
+            paper.stage += 1;
+          }
+
+          if (paper.x > width * anchors[anchors.length - 1]) {
+            paper.alpha -= 0.015;
+          }
+        } else {
+          paper.x += paper.vx;
+          paper.y += paper.vy;
+          paper.vy += 0.015;
+          paper.alpha -= 0.012;
+        }
+
+        return (
+          paper.alpha > 0.02 &&
+          paper.x < width + 24 &&
+          paper.y < height + 32
+        );
+      };
+
+      const tick = (timestamp) => {
+        if (prefersReducedMotion.matches) {
+          drawFrame(staticPapers);
+          return;
+        }
+
+        if (!lastSpawnAt) {
+          lastSpawnAt = timestamp;
+        }
+
+        const spawnInterval = 120;
+        while (timestamp - lastSpawnAt >= spawnInterval) {
+          if (papers.length < 96) {
+            papers.push(createPaper());
+          }
+          lastSpawnAt += spawnInterval;
+        }
+
+        papers = papers.filter(updatePaper);
+        drawFrame(papers);
+        animationId = window.requestAnimationFrame(tick);
       };
 
       const resize = () => {
@@ -361,83 +573,7 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
         canvas.style.height = `${height}px`;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         updatePalette();
-        createNodes();
-        drawFrame();
-      };
-
-      const drawConnections = () => {
-        const maxDistance = 150;
-        if (!palette) {
-          return;
-        }
-        for (let i = 0; i < nodes.length; i += 1) {
-          for (let j = i + 1; j < nodes.length; j += 1) {
-            const dx = nodes[i].x - nodes[j].x;
-            const dy = nodes[i].y - nodes[j].y;
-            const dist = Math.hypot(dx, dy);
-            if (dist < maxDistance) {
-              const opacity = 1 - dist / maxDistance;
-              ctx.strokeStyle = toRgba(palette.accentColor, 0.14 * opacity);
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(nodes[i].x, nodes[i].y);
-              ctx.lineTo(nodes[j].x, nodes[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-      };
-
-      const drawPulses = () => {
-        if (!palette) {
-          return;
-        }
-        pulses = pulses.filter((pulse) => pulse.radius < pulse.maxRadius);
-        pulses.forEach((pulse) => {
-          const alpha = Math.max(0, 1 - pulse.radius / pulse.maxRadius);
-          ctx.strokeStyle = toRgba(palette.accentColor, 0.22 * alpha);
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.arc(pulse.x, pulse.y, pulse.radius, 0, Math.PI * 2);
-          ctx.stroke();
-          pulse.radius += pulse.speed;
-        });
-      };
-
-      const drawNodes = () => {
-        if (!palette) {
-          return;
-        }
-        nodes.forEach((node) => {
-          ctx.fillStyle = toRgba(palette.accentColor, 0.22);
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-          ctx.fill();
-        });
-      };
-
-      const drawFrame = () => {
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
-        drawConnections();
-        drawPulses();
-        drawNodes();
-      };
-
-      const step = () => {
-        nodes.forEach((node) => {
-          node.x += node.vx;
-          node.y += node.vy;
-          if (node.x < 0 || node.x > width) {
-            node.vx *= -1;
-          }
-          if (node.y < 0 || node.y > height) {
-            node.vy *= -1;
-          }
-        });
-        drawFrame();
-        animationId = window.requestAnimationFrame(step);
+        refreshStaticPapers();
       };
 
       const start = () => {
@@ -445,30 +581,17 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
           window.cancelAnimationFrame(animationId);
           animationId = null;
         }
-        if (pulseId) {
-          window.clearInterval(pulseId);
-          pulseId = null;
-        }
+
+        lastSpawnAt = 0;
         if (prefersReducedMotion.matches) {
-          canvas.style.display = "none";
-          drawFrame();
+          drawFrame(staticPapers);
           return;
         }
-        canvas.style.display = "block";
-        pulseId = window.setInterval(() => {
-          const source = nodes[Math.floor(Math.random() * nodes.length)];
-          if (!source) {
-            return;
-          }
-          pulses.push({
-            x: source.x,
-            y: source.y,
-            radius: 0,
-            maxRadius: 160 + Math.random() * 120,
-            speed: 1.4 + Math.random() * 0.8
-          });
-        }, 1100);
-        animationId = window.requestAnimationFrame(step);
+
+        papers = Array.from({ length: 24 }, () =>
+          createPaper(anchors[0] + Math.random() * 0.28)
+        );
+        animationId = window.requestAnimationFrame(tick);
       };
 
       resize();
@@ -480,6 +603,7 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
       });
 
       const handleMotionChange = () => {
+        resize();
         start();
       };
 
@@ -491,7 +615,7 @@ paperurl: https://dl.acm.org/doi/10.1002/pra2.1290
 
       const observer = new MutationObserver(() => {
         updatePalette();
-        drawFrame();
+        drawFrame(prefersReducedMotion.matches ? staticPapers : papers);
       });
 
       observer.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
