@@ -87,10 +87,10 @@ header:
             </tbody>
           </table>
         </div>
-        <figcaption>Table 3. NeuroLit Navigator is the only system reporting reproducible, interpretable Boolean queries while achieving higher relevance in the computer science domain.</figcaption>
+        <figcaption>Table 1. NeuroLit Navigator is the only system reporting reproducible, interpretable Boolean queries while achieving higher relevance in the computer science domain.</figcaption>
       </figure>
 
-      <p class="paper-reference">In the evaluation, NeuroLit Navigator is the only tool that supports reproducible and interpretable query logic (Table 3).</p>
+      <p class="paper-reference">In the evaluation, NeuroLit Navigator is the only tool that supports reproducible and interpretable query logic (Table 1).</p>
     </section>
 
     <section id="paper-how" class="paper-section paper-anchor">
@@ -162,6 +162,7 @@ header:
     .paper-ai-augmented-search .paper-content {
       position: relative;
       z-index: 1;
+      padding-bottom: 5.8rem;
     }
 
     .paper-ai-augmented-search .paper-lede {
@@ -178,9 +179,29 @@ header:
 
     .paper-ai-augmented-search .paper-jump-links {
       display: flex;
-      flex-wrap: wrap;
       gap: 0.5rem;
       margin: 0.75rem 0 0.2rem;
+      position: fixed;
+      left: 50%;
+      bottom: calc(12px + env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      width: min(980px, calc(100vw - 1.4rem));
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      padding: 0.5rem;
+      border: 1px solid var(--paper-border);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper-panel) 78%, transparent);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(10px);
+      z-index: 30;
+      scrollbar-width: none;
+    }
+
+    .paper-ai-augmented-search .paper-jump-links::-webkit-scrollbar {
+      display: none;
     }
 
     .paper-ai-augmented-search .paper-jump-link {
@@ -194,6 +215,8 @@ header:
       line-height: 1.2;
       text-decoration: none;
       transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+      white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .paper-ai-augmented-search .paper-jump-link:hover,
@@ -302,6 +325,23 @@ header:
     }
 
     @media (max-width: 720px) {
+      .paper-ai-augmented-search .paper-content {
+        padding-bottom: 6.3rem;
+      }
+
+      .paper-ai-augmented-search .paper-jump-links {
+        width: calc(100vw - 0.8rem);
+        bottom: calc(8px + env(safe-area-inset-bottom));
+        border-radius: 14px;
+        padding: 0.42rem;
+        gap: 0.42rem;
+      }
+
+      .paper-ai-augmented-search .paper-jump-link {
+        font-size: 0.82rem;
+        padding: 0.32rem 0.62rem;
+      }
+
       .paper-ai-augmented-search .paper-section {
         padding: 1.2rem 1.1rem;
       }
