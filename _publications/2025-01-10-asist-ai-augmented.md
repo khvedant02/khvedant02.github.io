@@ -20,7 +20,6 @@ header:
     <p class="paper-lede">This paper provides a comparative analysis of AI-augmented search methods for systematic reviews, with a focus on relevance, reproducibility, and interpretability.</p>
 
     <nav class="paper-jump-links" aria-label="Publication section navigation">
-      <a class="paper-jump-link" href="#paper-citation">Citation</a>
       <a class="paper-jump-link" href="#paper-why">Why</a>
       <a class="paper-jump-link" href="#paper-what">What</a>
       <a class="paper-jump-link" href="#paper-how">How</a>
@@ -157,6 +156,7 @@ header:
       display: block;
       width: 100%;
       height: 100%;
+      opacity: 0.35;
     }
 
     .paper-ai-augmented-search .paper-content {
@@ -179,6 +179,7 @@ header:
 
     .paper-ai-augmented-search .paper-jump-links {
       display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
       margin: 0.75rem 0 0.2rem;
       position: fixed;
@@ -214,7 +215,7 @@ header:
       font-size: 0.88rem;
       line-height: 1.2;
       text-decoration: none;
-      transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+      transition: border-color 0.2s ease, color 0.2s ease;
       white-space: nowrap;
       flex: 0 0 auto;
     }
@@ -354,12 +355,21 @@ header:
 
   <script>
     (() => {
-      const citationParagraph = Array.from(document.querySelectorAll(".page__content p")).find(
-        (paragraph) => paragraph.textContent.includes("Recommended citation")
-      );
-      if (citationParagraph && !citationParagraph.id) {
-        citationParagraph.id = "paper-citation";
+      const attachCitationAnchor = () => {
+        const citationParagraph = Array.from(document.querySelectorAll(".page__content p")).find(
+          (paragraph) => paragraph.textContent.includes("Recommended citation")
+        );
+        if (citationParagraph && !citationParagraph.id) {
+          citationParagraph.id = "paper-citation";
+        }
+      };
+
+      attachCitationAnchor();
+      window.requestAnimationFrame(attachCitationAnchor);
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", attachCitationAnchor, { once: true });
       }
+      window.addEventListener("load", attachCitationAnchor, { once: true });
 
       const canvas = document.getElementById("review-network");
       if (!canvas) {
