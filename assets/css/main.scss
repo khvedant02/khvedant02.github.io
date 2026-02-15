@@ -39,6 +39,13 @@
   }
 }
 
+.page-last-updated {
+  margin-top: 1em;
+  font-size: 0.9em;
+  color: var(--global-text-color);
+  opacity: 0.75;
+}
+
 /* Publication Cards */
 .publications-grid {
   display: flex;
