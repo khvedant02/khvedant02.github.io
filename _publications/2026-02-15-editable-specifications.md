@@ -57,7 +57,7 @@ header:
     </section>
 
     <section id="spec-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li>Maintain a persistent knowledge graph <code>G = (R, C, P)</code> with local edit operations and provenance tracking.</li>
         <li>Condition the policy <code>pi_theta(a | s, G)</code> on the specification (optionally via graph embedding).</li>

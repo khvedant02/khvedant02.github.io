@@ -93,7 +93,7 @@ header:
     </section>
 
     <section id="paper-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li>Take a research question plus 1–2 exemplar (“gold standard”) articles from the librarian.</li>
         <li>Extract key entities via domain NER (e.g., SciSpacy).</li>

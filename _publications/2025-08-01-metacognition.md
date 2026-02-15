@@ -56,7 +56,7 @@ header:
     </section>
 
     <section id="meta-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li>S1 attempt: the LLM outputs a candidate solution in a strict format.</li>
         <li>Check: the metacognition module verifies correctness (for example, conflict violations or test outcomes).</li>
