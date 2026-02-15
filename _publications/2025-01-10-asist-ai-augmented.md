@@ -179,34 +179,25 @@ header:
 
     .paper-ai-augmented-search .paper-jump-links {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: stretch;
       gap: 0.5rem;
-      margin: 0.75rem 0 0.2rem;
       position: fixed;
-      left: 50%;
-      bottom: calc(12px + env(safe-area-inset-bottom));
-      transform: translateX(-50%);
-      width: min(980px, calc(100vw - 1.4rem));
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
+      right: max(0.95rem, calc((100vw - 1280px) / 2 - 1.2rem));
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(220px, calc(100vw - 1.4rem));
       padding: 0.5rem;
       border: 1px solid var(--paper-border);
-      border-radius: 999px;
+      border-radius: 14px;
       background: color-mix(in srgb, var(--paper-panel) 78%, transparent);
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
       backdrop-filter: blur(10px);
       z-index: 30;
-      scrollbar-width: none;
-    }
-
-    .paper-ai-augmented-search .paper-jump-links::-webkit-scrollbar {
-      display: none;
     }
 
     .paper-ai-augmented-search .paper-jump-link {
-      display: inline-block;
+      display: block;
       border: 1px solid var(--paper-border);
       border-radius: 999px;
       background: var(--paper-panel);
@@ -331,14 +322,30 @@ header:
       }
 
       .paper-ai-augmented-search .paper-jump-links {
-        width: calc(100vw - 0.8rem);
+        left: 50%;
+        right: auto;
+        top: auto;
         bottom: calc(8px + env(safe-area-inset-bottom));
+        transform: translateX(-50%);
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        width: calc(100vw - 0.8rem);
         border-radius: 14px;
         padding: 0.42rem;
         gap: 0.42rem;
       }
 
+      .paper-ai-augmented-search .paper-jump-links::-webkit-scrollbar {
+        display: none;
+      }
+
       .paper-ai-augmented-search .paper-jump-link {
+        display: inline-block;
         font-size: 0.82rem;
         padding: 0.32rem 0.62rem;
       }

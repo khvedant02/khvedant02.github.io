@@ -41,9 +41,19 @@
         </p>
 
         <div class="publication-card__links">
+            <a href="{{ base_path }}{{ post.url }}" class="publication-link" rel="permalink">
+                <i class="fas fa-arrow-right"></i> Learn More
+            </a>
+
             {% if post.paperurl %}
             <a href="{{ post.paperurl }}" class="publication-link" target="_blank">
                 <i class="fas fa-file-pdf"></i> PDF
+            </a>
+            {% endif %}
+
+            {% if post.tutorialurl %}
+            <a href="{{ post.tutorialurl }}" class="publication-link" target="_blank">
+                <i class="fas fa-link"></i> Tutorial
             </a>
             {% endif %}
 

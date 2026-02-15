@@ -7,6 +7,8 @@ excerpt: 'Demonstrating that language models enhanced with metacognitive capabil
 date: 2025-08-01
 venue: 'arXiv preprint arXiv:2508.17959'
 paperurl: 'https://arxiv.org/abs/2508.17959'
+tutorialurl: 'https://research.ibm.com/publications/sofai-lm-a-cognitive-architecture-for-building-efficient-and-reliable-reasoning-systems-with-llms'
+codeurl: 'https://github.com/SOFAI-LM-AAAILab/SOFAI-LM'
 citation: 'Vedant Khandelwal, Francesca Rossi, Keerthiram Murugesan, Erik Miehling, Murray Campbell, Karthikeyan Natesan Ramamurthy, and Lior Horesh. (2025). &quot;Language Models Coupled with Metacognition Can Outperform Reasoning Models.&quot; <i>arXiv preprint arXiv:2508.17959</i>.'
 header:
   teaser: /images/publications/metacognition/figure1.png
@@ -136,34 +138,25 @@ header:
 
     .paper-metacognition .paper-jump-links {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: stretch;
       gap: 0.5rem;
-      margin: 0.75rem 0 0.2rem;
       position: fixed;
-      left: 50%;
-      bottom: calc(12px + env(safe-area-inset-bottom));
-      transform: translateX(-50%);
-      width: min(980px, calc(100vw - 1.4rem));
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
+      right: max(0.95rem, calc((100vw - 1280px) / 2 - 1.2rem));
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(220px, calc(100vw - 1.4rem));
       padding: 0.5rem;
       border: 1px solid var(--paper-border);
-      border-radius: 999px;
+      border-radius: 14px;
       background: color-mix(in srgb, var(--paper-panel) 78%, transparent);
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
       backdrop-filter: blur(10px);
       z-index: 30;
-      scrollbar-width: none;
-    }
-
-    .paper-metacognition .paper-jump-links::-webkit-scrollbar {
-      display: none;
     }
 
     .paper-metacognition .paper-jump-link {
-      display: inline-block;
+      display: block;
       border: 1px solid var(--paper-border);
       border-radius: 999px;
       background: var(--paper-panel);
@@ -268,14 +261,30 @@ header:
       }
 
       .paper-metacognition .paper-jump-links {
-        width: calc(100vw - 0.8rem);
+        left: 50%;
+        right: auto;
+        top: auto;
         bottom: calc(8px + env(safe-area-inset-bottom));
+        transform: translateX(-50%);
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        width: calc(100vw - 0.8rem);
         border-radius: 14px;
         padding: 0.42rem;
         gap: 0.42rem;
       }
 
+      .paper-metacognition .paper-jump-links::-webkit-scrollbar {
+        display: none;
+      }
+
       .paper-metacognition .paper-jump-link {
+        display: inline-block;
         font-size: 0.82rem;
         padding: 0.32rem 0.62rem;
       }
