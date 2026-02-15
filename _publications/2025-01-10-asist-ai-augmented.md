@@ -19,7 +19,15 @@ header:
   <div class="paper-content">
     <p class="paper-lede">This paper provides a comparative analysis of AI-augmented search methods for systematic reviews, with a focus on relevance, reproducibility, and interpretability.</p>
 
-    <section class="paper-section">
+    <nav class="paper-jump-links" aria-label="Publication section navigation">
+      <a class="paper-jump-link" href="#paper-citation">Citation</a>
+      <a class="paper-jump-link" href="#paper-why">Why</a>
+      <a class="paper-jump-link" href="#paper-what">What</a>
+      <a class="paper-jump-link" href="#paper-how">How</a>
+      <a class="paper-jump-link" href="#paper-key">Key contributions</a>
+    </nav>
+
+    <section id="paper-why" class="paper-section paper-anchor">
       <h2>Why it matters</h2>
       <ul class="paper-list">
         <li>Systematic reviews are slow and labor-intensive (reported average 67 weeks), and search strategy errors can undermine what evidence gets included.</li>
@@ -27,7 +35,7 @@ header:
       </ul>
     </section>
 
-    <section class="paper-section">
+    <section id="paper-what" class="paper-section paper-anchor">
       <h2>What we did</h2>
       <ul class="paper-list">
         <li>We compared a human-in-the-loop neurosymbolic system (NeuroLit Navigator) against three commercial LLM-based tools (Scite, Consensus, Perplexity) for systematic-review-style searching.</li>
@@ -85,7 +93,7 @@ header:
       <p class="paper-reference">In the evaluation, NeuroLit Navigator is the only tool that supports reproducible and interpretable query logic (Table 3).</p>
     </section>
 
-    <section class="paper-section">
+    <section id="paper-how" class="paper-section paper-anchor">
       <h2>How it works (high level)</h2>
       <ul class="paper-list">
         <li>Take a research question plus 1–2 exemplar (“gold standard”) articles from the librarian.</li>
@@ -102,7 +110,7 @@ header:
       <p class="paper-reference">The system is organized as a three-stage pipeline from entity extraction to query expansion to retrieval and re-ranking (Figure 1).</p>
     </section>
 
-    <section class="paper-section">
+    <section id="paper-key" class="paper-section paper-anchor">
       <h2>Key contributions</h2>
       <ul class="paper-list">
         <li>An empirical comparison of NeuroLit Navigator vs. Scite/Consensus/Perplexity on systematic-review-oriented criteria (not only relevance).</li>
@@ -166,6 +174,38 @@ header:
     .paper-ai-augmented-search .paper-note {
       margin-top: 0;
       color: var(--paper-ink-soft);
+    }
+
+    .paper-ai-augmented-search .paper-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 0.2rem;
+    }
+
+    .paper-ai-augmented-search .paper-jump-link {
+      display: inline-block;
+      border: 1px solid var(--paper-border);
+      border-radius: 999px;
+      background: var(--paper-panel);
+      color: var(--paper-ink);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.88rem;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .paper-ai-augmented-search .paper-jump-link:hover,
+    .paper-ai-augmented-search .paper-jump-link:focus-visible {
+      border-color: var(--paper-accent);
+      color: var(--paper-accent);
+      outline: none;
+    }
+
+    .paper-ai-augmented-search .paper-anchor,
+    .page__content #paper-citation {
+      scroll-margin-top: 95px;
     }
 
     .paper-ai-augmented-search .paper-section {
@@ -274,6 +314,13 @@ header:
 
   <script>
     (() => {
+      const citationParagraph = Array.from(document.querySelectorAll(".page__content p")).find(
+        (paragraph) => paragraph.textContent.includes("Recommended citation")
+      );
+      if (citationParagraph && !citationParagraph.id) {
+        citationParagraph.id = "paper-citation";
+      }
+
       const canvas = document.getElementById("review-network");
       if (!canvas) {
         return;
