@@ -7,6 +7,7 @@ excerpt: "A domain-agnostic neurosymbolic pipeline for large-scale COVID-era men
 date: 2024-12-01
 venue: "IEEE International Conference on Big Data"
 paperurl: "https://ieeexplore.ieee.org/document/10825174"
+slidesurl: "https://docs.google.com/presentation/d/1BLkNWCDjy02bj0BAtkDEhLmPFLj3kZqwWQKpR4o6m68/edit?usp=sharing"
 codeurl: "https://github.com/khvedant02/Neurosymbolic-Mental-Health-Monitoring-COVID19"
 citation: 'Vedant Khandelwal, Manas Gaur, Ugur Kursuncu, Valerie Shalin, and Amit Sheth. (2024). &quot;A Domain-Agnostic Neurosymbolic Approach for Big Social Data Analysis: Evaluating Mental Health Sentiment on Social Media during COVID-19.&quot; <i>Proceedings of the IEEE International Conference on Big Data</i>.'
 header:
@@ -20,7 +21,7 @@ header:
 
   <div class="paper-content">
     <p class="paper-lede">This paper presents a domain-agnostic neurosymbolic framework for analyzing large-scale social media signals and monitoring depression, addiction, and anxiety during COVID-19.</p>
-    <p class="paper-note"><a href="https://ieeexplore.ieee.org/document/10825174">Paper</a> | <a href="https://github.com/khvedant02/Neurosymbolic-Mental-Health-Monitoring-COVID19">Code</a></p>
+    <p class="paper-note"><a href="https://ieeexplore.ieee.org/document/10825174">Paper</a> | <a href="https://docs.google.com/presentation/d/1BLkNWCDjy02bj0BAtkDEhLmPFLj3kZqwWQKpR4o6m68/edit?usp=sharing">Slides</a> | <a href="https://github.com/khvedant02/Neurosymbolic-Mental-Health-Monitoring-COVID19">Code</a></p>
 
     <nav class="paper-jump-links" aria-label="Publication section navigation">
       <a class="paper-jump-link" href="#covid-why">Why</a>

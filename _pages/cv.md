@@ -57,20 +57,22 @@ Tutorials, Labs & Invited Talks
 * **SOFAI Lab: A Hands-On Guide to Building Neurosymbolic Systems with Metacognitive Control**  
   Contributing Presenter, AAAI 2025 Quarter Day Labs, February 2025  
   *Vedant Khandelwal*  
-  [SOFAI Lab Slides](https://docs.google.com/presentation/d/15auMRq_svm-VMpz3kwzA2hNbRxH_tlX4g6IPH_kIkGc/edit?usp=sharing)
+  [Slides](https://docs.google.com/presentation/d/15auMRq_svm-VMpz3kwzA2hNbRxH_tlX4g6IPH_kIkGc/edit?usp=sharing)
 
 * **Neuro-Symbolic AI for Deep Analysis of Social Media Big Data (Tutorial)**  
   IEEE International Conference on Big Data, December 2024  
   *Vedant Khandelwal, Manas Gaur, Ugur Kursuncu, Valerie Shalin, and Amit Sheth*  
-  [Slides](https://docs.google.com/presentation/d/1VBnFUfsLg7hHHB_B5MLgbyV_vcGsAMdrO2ATEgmZbXY/edit?usp=sharing) | [Tutorial Link](https://aiisc.ai/smbd24/) | [Tutorial PDF](https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1336&context=csce_facpub)
+  [Slides](https://docs.google.com/presentation/d/1VBnFUfsLg7hHHB_B5MLgbyV_vcGsAMdrO2ATEgmZbXY/edit?usp=sharing) | [Website](https://aiisc.ai/smbd24/) | [pdf](https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1336&context=csce_facpub)
 
 * **Introduction to Transformers: Theory and Practical Applications**  
   Guest Lecture at CSCE 180 - Artificial Intelligence for All, University of South Carolina, September 2024  
-  *Vedant Khandelwal*
+  *Vedant Khandelwal*  
+  [Slides](https://docs.google.com/presentation/d/1YEMpKTDvEe2OczunFdHwqtkz8l3qhmEp9ngBOpWP5f4/edit?usp=sharing)
 
 * **Foundation Models**  
   Guest Lecture at CSCE 580 - Artificial Intelligence, University of South Carolina, April 2024  
-  *Vedant Khandelwal*
+  *Vedant Khandelwal*  
+  [Slides](https://docs.google.com/presentation/d/1taCqmYk9RQ-c7BRZVIKmOgsgVNr8TxW7H4J-EjMw3J8/edit?usp=sharing)
 
 Panels & Seminars
 ======
