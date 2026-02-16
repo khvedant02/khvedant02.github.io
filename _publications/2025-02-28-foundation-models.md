@@ -7,6 +7,7 @@ excerpt: "A reinforcement learning foundation model for pathfinding heuristics t
 date: 2025-02-28
 venue: 'GenPlan Workshop, AAAI 2025'
 paperurl: "https://aair-lab.github.io/genplan25/papers/35.pdf"
+slidesurl: "https://docs.google.com/presentation/d/14FIkaabtwWMK6hQsWf96tsgmYxlTL7g-ar-80FnaFd8/edit?usp=sharing"
 citation: 'Vedant Khandelwal, Amit Sheth, and Forest Agostinelli. (2025). &quot;Towards Learning Foundation Models for Heuristic Functions to Solve Pathfinding Problems.&quot; <i>GenPlan Workshop, AAAI 2025</i>.'
 header:
   teaser: /images/publications/towardsfm/figure1.png
