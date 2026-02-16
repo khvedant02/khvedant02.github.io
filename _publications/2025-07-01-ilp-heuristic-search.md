@@ -9,7 +9,7 @@ venue: "5th International Joint Conference on Learning & Reasoning 2025 and ICAP
 paperurl: "https://prl-theworkshop.github.io/prl2025-icaps/papers/3.pdf"
 slidesurl: "https://docs.google.com/presentation/d/1y90rD1wl12DISOosIIeo6S5BsnkWERWXVVlg4MN8PRk/edit?usp=sharing"
 codeurl: "https://github.com/khvedant02/HeurSearchILP"
-citation: "Vedant Khandelwal et al. (2025). &quot;Inductive Logic Programming for Heuristic Search.&quot; <i>5th International Joint Conference on Learning &amp; Reasoning (IJCLR 2025) and ICAPS 2025 Workshop on Planning and Reinforcement Learning (PRL)</i>."
+citation: "Rojina Panta*, Vedant Khandelwal*, Celeste Veronese, Amit Sheth, Daniele Meli, and Forest Agostinelli. (2025). &quot;Inductive Logic Programming for Heuristic Search.&quot; <i>5th International Joint Conference on Learning &amp; Reasoning (IJCLR 2025) and ICAPS 2025 Workshop on Planning and Reinforcement Learning (PRL)</i>. (* Equal contribution)"
 header:
   teaser: /images/publications/heurilp/figure1.png
 ---
