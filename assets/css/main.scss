@@ -56,42 +56,19 @@
 
 .publication-card {
   display: flex;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
   gap: 1.25rem;
   margin: 0;
   padding: 1.05rem;
   border-radius: 12px;
   border: 1px solid var(--global-border-color, #d8dde6);
-  background: linear-gradient(140deg, rgba(0, 102, 204, 0.1) 0%, rgba(255, 255, 255, 0.9) 44%, rgba(255, 255, 255, 0.74) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.46));
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(120deg, rgba(0, 102, 204, 0.2) 0%, rgba(0, 102, 204, 0.06) 26%, rgba(255, 255, 255, 0) 52%);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-  }
-
-  > * {
-    position: relative;
-    z-index: 1;
-  }
-
   &:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--global-link-color, #0066cc);
-    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.14);
-
-    &::after {
-      opacity: 1;
-    }
+    box-shadow: 0 10px 18px rgba(15, 23, 42, 0.1);
   }
 
   @media (max-width: 768px) {
@@ -101,7 +78,7 @@
 }
 
 html[data-theme="dark"] .publication-card {
-  background: linear-gradient(140deg, rgba(0, 102, 204, 0.22) 0%, rgba(25, 32, 46, 0.84) 44%, rgba(16, 21, 34, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
 }
 
@@ -113,7 +90,6 @@ html[data-theme="dark"] .publication-card {
   border-radius: 10px;
   border: 1px solid var(--global-border-color, #d8dde6);
   background: rgba(0, 102, 204, 0.06);
-  transition: border-color 0.2s ease;
 
   a {
     display: block;
@@ -136,14 +112,6 @@ html[data-theme="dark"] .publication-card {
     width: 100%;
     height: 180px;
   }
-}
-
-.publication-card:hover .publication-card__image {
-  border-color: var(--global-link-color, #0066cc);
-}
-
-.publication-card:hover .publication-card__image img {
-  transform: scale(1.04);
 }
 
 .publication-card__content {
@@ -689,21 +657,8 @@ html[data-theme="dark"] .talk-item {
 
 @media (prefers-reduced-motion: reduce) {
   .publication-card,
-  .publication-link,
-  .publication-card__image,
-  .publication-card__image img,
-  .publication-card::after {
+  .publication-link {
     transition: none;
-  }
-
-  .publication-card:hover,
-  .publication-link:hover,
-  .publication-card:hover .publication-card__image img {
-    transform: none;
-  }
-
-  .publication-card:hover::after {
-    opacity: 0;
   }
 
   .talk-item {
