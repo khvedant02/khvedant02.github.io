@@ -4,13 +4,6 @@ collection: publications
 category: preprints
 permalink: /publication/2025-arxiv-metacognition
 excerpt: 'Demonstrating that language models enhanced with metacognitive capabilities can outperform traditional reasoning models.'
-description: "Agentic AI and LLM reasoning research on metacognitive control loops that improve reliability and efficiency versus standalone reasoning models."
-keywords:
-  - "Agentic AI"
-  - "LLM Reasoning"
-  - "Metacognitive AI"
-  - "Fast-Slow AI Architecture"
-  - "Neurosymbolic AI"
 date: 2025-08-01
 venue: 'arXiv preprint arXiv:2508.17959 (under review at ICML 2026)'
 paperurl: 'https://arxiv.org/abs/2508.17959'

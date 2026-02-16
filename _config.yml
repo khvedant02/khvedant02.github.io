@@ -12,11 +12,11 @@ site_theme               : "air" # The available themes options are "default", "
 title                    : "Vedant Khandelwal"
 title_separator          : "-"
 name                     : &name "Vedant Khandelwal"
-description              : &description "AI Research Scientist specializing in neurosymbolic AI, agentic AI, reinforcement learning, knowledge graphs, and LLM reasoning for planning and decision systems."
+description              : &description "Vedant Khandelwal's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://khvedant02.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "khvedant02/khvedant02.github.io"
+repository               : "academicpages/academicpages.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -26,21 +26,10 @@ author:
   avatar           : "profile.jpg"
   name             : "Vedant Khandelwal"
   pronouns         : # example: "she/her"  
-  bio              : "AI Research Scientist (Ph.D. Candidate) focused on neurosymbolic AI, LLM reasoning, planning, reinforcement learning, and knowledge-grounded AI systems."
+  bio              : "Ph.D. candidate in Computer Science at the University of South Carolina"
   location         : "Columbia, SC"
   employer         : "University of South Carolina"
-  uri              : "https://khvedant02.github.io"
-  job_title        : "AI Research Scientist"
-  affiliation      : "University of South Carolina"
-  alumni           : "International Institute of Information Technology, Naya Raipur"
-  knows_about:
-    - "Neurosymbolic AI"
-    - "Agentic AI"
-    - "Reinforcement Learning"
-    - "Knowledge Graphs"
-    - "LLM Reasoning"
-    - "AI Planning"
-    - "Reasoning and Decision-Making Systems"
+  uri              : # URL
   email            : "vedant@email.sc.edu" 
 
   # Academic websites
@@ -156,30 +145,14 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "profile.jpg" # Social media default site image
-og_description           : "AI research portfolio: neurosymbolic AI, agentic AI, LLM reasoning, planning, reinforcement learning, and knowledge graph AI."
+og_image                 :  # Social media default site image
+og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : "Person" # Person or Organization (defaults to Person)
-  name                   : "Vedant Khandelwal" # If the user or organization name differs from the site's name
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-    - "https://khvedant02.github.io"
-    - "https://www.linkedin.com/in/khvedant"
-    - "https://github.com/khvedant02"
-    - "https://scholar.google.com/citations?user=4VmpXbAAAAAJ&hl=en"
-    - "https://orcid.org/0000-0002-7291-3066"
-    - "https://www.researchgate.net/profile/Vedant-Khandelwal/"
-
-seo_keywords:
-  - "AI Research Scientist"
-  - "Neurosymbolic AI"
-  - "Agentic AI"
-  - "Reinforcement Learning Research"
-  - "Knowledge Graph AI"
-  - "LLM Reasoning"
-  - "Planning and Reasoning AI"
-  - "Neuro-symbolic methods"
 
 
 # Analytics

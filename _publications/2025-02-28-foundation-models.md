@@ -4,13 +4,6 @@ collection: publications
 category: workshops
 permalink: /publication/2025-genplan-foundation-models
 excerpt: "A reinforcement learning foundation model for pathfinding heuristics that generalizes across diverse PDDL domains."
-description: "Reinforcement learning research on foundation models for heuristic functions, enabling cross-domain planning and pathfinding generalization."
-keywords:
-  - "Reinforcement Learning Research"
-  - "Foundation Models"
-  - "Planning and Reasoning AI"
-  - "Heuristic Search"
-  - "Pathfinding AI"
 date: 2025-02-28
 venue: 'GenPlan Workshop, AAAI 2025'
 paperurl: "https://aair-lab.github.io/genplan25/papers/35.pdf"

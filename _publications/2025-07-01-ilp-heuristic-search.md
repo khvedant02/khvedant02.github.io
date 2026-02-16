@@ -4,13 +4,6 @@ collection: publications
 category: workshops
 permalink: /publication/2025-ilp-heuristic-search
 excerpt: "Learning explainable cost-to-go heuristics directly as logic programs for efficient A* search."
-description: "Neuro-symbolic methods for planning and heuristic search, learning explainable cost-to-go functions as logic programs for efficient pathfinding."
-keywords:
-  - "Inductive Logic Programming"
-  - "Heuristic Search"
-  - "Planning and Reasoning AI"
-  - "Neuro-symbolic methods"
-  - "Pathfinding AI"
 date: 2025-07-01
 venue: "Accepted at both IJCLR 2025 (5th International Joint Conference on Learning & Reasoning) and the ICAPS 2025 Workshop on Planning and Reinforcement Learning (PRL)"
 paperurl: "https://prl-theworkshop.github.io/prl2025-icaps/papers/3.pdf"
