@@ -19,7 +19,6 @@ header:
 
   <div class="paper-content">
     <p class="paper-lede">This paper studies how to extract structured cannabis-depression relationships from noisy Twitter text when only a small expert-labeled subset is available.</p>
-    <p class="paper-note"><a href="https://ceur-ws.org/Vol-2846/paper9.pdf">Paper (PDF)</a></p>
 
     <nav class="paper-jump-links" aria-label="Publication section navigation">
       <a class="paper-jump-link" href="#dep-why">Why</a>
