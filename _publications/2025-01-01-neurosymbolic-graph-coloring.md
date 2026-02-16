@@ -7,6 +7,7 @@ excerpt: "SOFAI-v2 combines fast LLM proposals with metacognitive verification a
 date: 2025-01-01
 venue: "Twelfth Annual Conference on Advances in Cognitive Systems (ACS)"
 paperurl: "http://www.cogsys.org/proceedings/2025/paper-2025-17.pdf"
+slidesurl: "https://docs.google.com/presentation/d/1lNbXNVTPvnbLwafQTNw3QW3jV0FMjYl-rd072sA_aG4/edit?usp=sharing"
 codeurl: "https://github.com/khvedant02/CSP-SOFAI_v2"
 citation: "Vedant Khandelwal, Vishal Pallagani, Biplav Srivastava, and Francesca Rossi. (2025). &quot;A Neurosymbolic Fast and Slow Architecture for Graph Coloring.&quot; <i>Twelfth Annual Conference on Advances in Cognitive Systems (ACS)</i>."
 header:

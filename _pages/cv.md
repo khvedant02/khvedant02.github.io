@@ -47,7 +47,7 @@ Tutorials, Labs & Invited Talks
 * **SOFAI-LM: A Cognitive Architecture for Building Efficient and Reliable Reasoning Systems with LLMs**  
   Quarter Day Lab at AAAI 2026  
   *Vedant Khandelwal, Francesca Rossi, Vishal Pallagani, Keerthiram Murugesan, and Lior Horesh*  
-  [SOFAI-LM Lab](https://sofai-lm-aaailab.github.io/)
+  [Website](https://sofai-lm-aaailab.github.io/) | [Slides](https://docs.google.com/presentation/d/1DjCDOYEihNorX42C_krx4ZOkLpn0uHnQYaYVDMr7tlE/edit?usp=sharing) | [Code](https://github.com/SOFAI-LM-AAAILab/SOFAI-LM) | [pdf](https://research.ibm.com/publications/sofai-lm-a-cognitive-architecture-for-building-efficient-and-reliable-reasoning-systems-with-llms)
 
 * **Towards Learning Foundation Models for Heuristic Functions to Solve Pathfinding Problems**  
   Contributing Talk at the GenPlan Workshop, AAAI 2025, February 2025  
@@ -78,16 +78,19 @@ Panels & Seminars
 ======
 * **A Neurosymbolic Fast and Slow Architecture for Graph Coloring**  
   Presented at the CP/ML Bridge during AAAI 2025, February 2025  
-  *Vedant Khandelwal*
+  *Vedant Khandelwal*  
+  [Slides](https://docs.google.com/presentation/d/1kTcKHGkoYeBJjCkCLfxSq2UYvK1IW4IYeohYccQ65NM/edit?usp=sharing)
 
 * **A Brief Primer on AI-Based Tools and Generative AI Applications**  
   Panelist at the seminar "From Chatbots to Generative AI: How to Ethically and Efficiently Advise Clients on the Use of AI-Based Technology in Everyday Practice"  
   2025 South Carolina Bar Convention, January 16-19, 2025  
-  *Vedant Khandelwal*
+  *Vedant Khandelwal*  
+  [Slides](https://docs.google.com/presentation/d/1I-HP5wBe1mRqCTWuJkPaLuGC_YjMZKqG/edit?usp=sharing&ouid=115247131869288333945&rtpof=true&sd=true)
 
 * **Psychidemic: Measuring the Spatio-Temporal Psychological Impact of Novel Coronavirus with a Social Quality Index**  
   CSCE 791 - Seminar in Advances in Computing, University of South Carolina, April 2021  
-  *Vedant Khandelwal*
+  *Vedant Khandelwal*  
+  [Slides](https://docs.google.com/presentation/d/1F_02DktgLRx9IVNY56UZrbuJiq0i8glSEqm8VI4wcKE/edit?usp=sharing)
 
 Patents
 ======
