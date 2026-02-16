@@ -2,6 +2,13 @@
 layout: archive
 title: ""
 permalink: /cv/
+seo_title: "CV | Vedant Khandelwal - AI Research Scientist"
+description: "Curriculum vitae of Vedant Khandelwal, AI Research Scientist and Ph.D. candidate working on neurosymbolic AI, agentic AI, reinforcement learning, and LLM reasoning."
+keywords:
+  - "AI Research Scientist CV"
+  - "Neurosymbolic AI Researcher CV"
+  - "Reinforcement Learning Research Scientist"
+  - "LLM Reasoning Researcher"
 author_profile: true
 redirect_from:
   - /resume

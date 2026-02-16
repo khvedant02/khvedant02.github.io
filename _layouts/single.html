@@ -81,6 +81,19 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
+      {% if page.collection == 'publications' %}
+      <section class="page__content" aria-labelledby="related-research-heading">
+        <h2 id="related-research-heading">Explore Related Research Themes</h2>
+        <ul>
+          <li><a href="{{ base_path }}/research/#neurosymbolic-ai">Neurosymbolic AI</a></li>
+          <li><a href="{{ base_path }}/research/#agentic-ai-and-llm-reasoning">Agentic AI and LLM Reasoning</a></li>
+          <li><a href="{{ base_path }}/research/#reinforcement-learning-research-and-planning">Reinforcement Learning Research and Planning</a></li>
+          <li><a href="{{ base_path }}/research/#knowledge-graph-ai-and-retrieval">Knowledge Graph AI and Retrieval</a></li>
+        </ul>
+        <p>See all papers on the <a href="{{ base_path }}/publications/">publications page</a> and the hiring-focused summary on <a href="{{ base_path }}/ai-research-scientist/">AI Research Scientist</a>.</p>
+      </section>
+      {% endif %}
+
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>

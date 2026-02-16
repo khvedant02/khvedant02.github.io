@@ -2,8 +2,19 @@
 layout: archive
 title: "Publications"
 permalink: /publications/
+seo_title: "AI Publications | Neurosymbolic AI, Agentic AI, RL, LLM Reasoning"
+description: "Research publications by Vedant Khandelwal in neurosymbolic AI, agentic AI, reinforcement learning research, knowledge graph AI, and planning with LLM reasoning."
+keywords:
+  - "AI Research Publications"
+  - "Neurosymbolic AI Publications"
+  - "Agentic AI Research"
+  - "Reinforcement Learning Research"
+  - "Knowledge Graph AI"
+  - "LLM Reasoning Papers"
 author_profile: true
 ---
+
+{% include base_path %}
 
 {% if site.author.googlescholar %}
 <div class="wordwrap">You can find my latest articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
@@ -16,10 +27,23 @@ Display when the publications page was last updated (site build time)
   <em>Last Updated: {{ site.time | date: "%B %d, %Y" }}</em>
 </p>
 
-{% include base_path %}
+<section aria-labelledby="publication-topics-heading">
+  <h2 id="publication-topics-heading">Publication Topics</h2>
+  <p>My research publications focus on AI reasoning systems, with emphasis on neurosymbolic methods, agentic LLM architectures, planning, and reinforcement learning.</p>
+  <ul>
+    <li><strong>Neurosymbolic AI:</strong> <a href="{{ base_path }}/publication/2025-ieee-neurosymbolic-planning">Knowledge-grounded planning and reasoning</a>, <a href="{{ base_path }}/publication/2025-acs-neurosymbolic-graph-coloring">fast-slow graph coloring architecture</a></li>
+    <li><strong>Agentic AI and LLM Reasoning:</strong> <a href="{{ base_path }}/publication/2025-arxiv-metacognition">metacognitive control for language models</a></li>
+    <li><strong>Reinforcement Learning Research:</strong> <a href="{{ base_path }}/publication/2026-aaai-make-editable-specifications">editable specifications for neurosymbolic RL</a></li>
+    <li><strong>Planning + Reasoning AI:</strong> <a href="{{ base_path }}/publication/2025-genplan-pddlfuse">PDDLFuse domain generation</a>, <a href="{{ base_path }}/publication/2025-ilp-heuristic-search">ILP for heuristic search</a></li>
+    <li><strong>Knowledge Graph AI:</strong> <a href="{{ base_path }}/publication/2025-arxiv-neurolit-navigator">NeuroLit Navigator</a>, <a href="{{ base_path }}/publication/2025-asist-ai-augmented-search">AI-augmented search for systematic reviews</a></li>
+  </ul>
+</section>
 
+<section aria-labelledby="publication-list-heading">
+  <h2 id="publication-list-heading">All Publications</h2>
 <div class="publications-grid">
   {% for post in site.publications reversed %}
   {% include publication-card.html %}
   {% endfor %}
 </div>
+</section>

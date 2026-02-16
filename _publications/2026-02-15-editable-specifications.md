@@ -4,6 +4,13 @@ collection: publications
 category: workshops
 permalink: /publication/2026-aaai-make-editable-specifications
 excerpt: "A neurosymbolic RL framework where editable specifications drive immediate, auditable behavior changes without retraining."
+description: "Neurosymbolic reinforcement learning research introducing editable symbolic specifications for auditable, constraint-aware behavior updates without policy retraining."
+keywords:
+  - "Neurosymbolic Reinforcement Learning"
+  - "Reinforcement Learning Research"
+  - "Planning and Reasoning AI"
+  - "Neuro-symbolic methods"
+  - "Constraint-aware AI"
 date: 2026-02-15
 venue: "AAAI-MAKE 2026 (Under Review)"
 paperurl: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1654&context=aii_fac_pub"

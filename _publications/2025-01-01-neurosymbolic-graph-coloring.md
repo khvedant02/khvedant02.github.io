@@ -4,6 +4,13 @@ collection: publications
 category: conferences
 permalink: /publication/2025-acs-neurosymbolic-graph-coloring
 excerpt: "SOFAI-v2 combines fast LLM proposals with metacognitive verification and symbolic fallback for reliable graph coloring."
+description: "Neurosymbolic and agentic AI research on fast-slow architectures that combine LLM reasoning, metacognitive checks, and symbolic fallback for constraint-heavy tasks."
+keywords:
+  - "Neurosymbolic AI"
+  - "Agentic AI"
+  - "LLM Reasoning"
+  - "Constraint Satisfaction"
+  - "Planning and Reasoning AI"
 date: 2025-01-01
 venue: "Twelfth Annual Conference on Advances in Cognitive Systems (ACS)"
 paperurl: "http://www.cogsys.org/proceedings/2025/paper-2025-17.pdf"

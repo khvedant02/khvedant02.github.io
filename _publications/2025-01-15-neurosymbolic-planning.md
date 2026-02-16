@@ -4,6 +4,13 @@ collection: publications
 category: manuscripts
 permalink: /publication/2025-ieee-neurosymbolic-planning
 excerpt: "A neurosymbolic framework for knowledge-grounded, constraint-aware planning and reasoning in high-stakes AI decision support."
+description: "Knowledge graph AI and neurosymbolic planning research integrating LLM reasoning with symbolic constraints for interpretable, policy-compliant decisions."
+keywords:
+  - "Neurosymbolic AI"
+  - "Knowledge Graph AI"
+  - "Planning and Reasoning AI"
+  - "LLM Reasoning"
+  - "Neuro-symbolic methods"
 date: 2025-01-15
 venue: "IEEE Intelligent Systems"
 paperurl: "https://par.nsf.gov/servlets/purl/10632010"
