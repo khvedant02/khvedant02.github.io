@@ -5,11 +5,11 @@ category: preprints
 permalink: /publication/2025-arxiv-metacognition
 excerpt: 'Demonstrating that language models enhanced with metacognitive capabilities can outperform traditional reasoning models.'
 date: 2025-08-01
-venue: 'arXiv preprint arXiv:2508.17959'
+venue: 'arXiv preprint arXiv:2508.17959 (under review at ICML 2026)'
 paperurl: 'https://arxiv.org/abs/2508.17959'
 tutorialurl: 'https://sofai-lm-aaailab.github.io/'
 codeurl: 'https://github.com/SOFAI-LM-AAAILab/SOFAI-LM'
-citation: 'Vedant Khandelwal, Francesca Rossi, Keerthiram Murugesan, Erik Miehling, Murray Campbell, Karthikeyan Natesan Ramamurthy, and Lior Horesh. (2025). &quot;Language Models Coupled with Metacognition Can Outperform Reasoning Models.&quot; <i>arXiv preprint arXiv:2508.17959</i>.'
+citation: 'Vedant Khandelwal, Francesca Rossi, Keerthiram Murugesan, Erik Miehling, Murray Campbell, Karthikeyan Natesan Ramamurthy, and Lior Horesh. (2025). &quot;Language Models Coupled with Metacognition Can Outperform Reasoning Models.&quot; <i>arXiv preprint arXiv:2508.17959 (under review at ICML 2026)</i>.'
 header:
   teaser: /images/publications/metacognition/figure1.png
 ---

@@ -5,11 +5,11 @@ category: workshops
 permalink: /publication/2025-ilp-heuristic-search
 excerpt: "Learning explainable cost-to-go heuristics directly as logic programs for efficient A* search."
 date: 2025-07-01
-venue: "5th International Joint Conference on Learning & Reasoning 2025 and ICAPS 2025 Workshop PRL (Accepted at two places)"
+venue: "Accepted at both IJCLR 2025 (5th International Joint Conference on Learning & Reasoning) and the ICAPS 2025 Workshop on Planning and Reinforcement Learning (PRL)"
 paperurl: "https://prl-theworkshop.github.io/prl2025-icaps/papers/3.pdf"
 slidesurl: "https://docs.google.com/presentation/d/1y90rD1wl12DISOosIIeo6S5BsnkWERWXVVlg4MN8PRk/edit?usp=sharing"
 codeurl: "https://github.com/khvedant02/HeurSearchILP"
-citation: "Rojina Panta*, Vedant Khandelwal*, Celeste Veronese, Amit Sheth, Daniele Meli, and Forest Agostinelli. (2025). &quot;Inductive Logic Programming for Heuristic Search.&quot; <i>5th International Joint Conference on Learning &amp; Reasoning (IJCLR 2025) and ICAPS 2025 Workshop on Planning and Reinforcement Learning (PRL)</i>. (* Equal contribution)"
+citation: "Rojina Panta*, Vedant Khandelwal*, Celeste Veronese, Amit Sheth, Daniele Meli, and Forest Agostinelli. (2025). &quot;Inductive Logic Programming for Heuristic Search.&quot; <i>Accepted at both IJCLR 2025 (5th International Joint Conference on Learning &amp; Reasoning) and the ICAPS 2025 Workshop on Planning and Reinforcement Learning (PRL)</i>. (* Equal contribution)"
 header:
   teaser: /images/publications/heurilp/figure1.png
 ---

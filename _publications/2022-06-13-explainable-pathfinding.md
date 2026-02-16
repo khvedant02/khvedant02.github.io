@@ -9,7 +9,7 @@ venue: 'ICAPS 2022 Workshop on Explainable AI Planning'
 paperurl: "https://openreview.net/pdf?id=S44aSPW6lRa"
 citation: 'Forest Agostinelli, Rojina Panta, Vedant Khandelwal, Biplav Srivastava, Bharath Chandra Muppasani, Kausik Lakkaraju, and Dezhi Wu. (2022). &quot;Explainable Pathfinding for Inscrutable Planners with Inductive Logic Programming.&quot; <i>ICAPS 2022 Workshop on Explainable AI Planning</i>.'
 header:
-  teaser: /images/publications/xplain/figure1.png
+  teaser: /images/publications/xplain/figure3.png
 ---
 
 <div class="paper-xplain">

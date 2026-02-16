@@ -6,8 +6,6 @@
 {% assign title = post.title %}
 {% endif %}
 
-{% assign cv_anchor = post.slug | default: post.title | slugify %}
-
 {% if post.header.teaser %}
 {% assign card_image = post.header.teaser %}
 {% elsif post.header.image %}
@@ -43,7 +41,7 @@
         </p>
 
         <div class="publication-card__links">
-            <a href="{{ base_path }}/cv/#cv-pub-{{ cv_anchor }}" class="publication-link">
+            <a href="{{ base_path }}{{ post.url }}" class="publication-link" rel="permalink">
                 <i class="fas fa-arrow-right"></i> Learn More
             </a>
 
