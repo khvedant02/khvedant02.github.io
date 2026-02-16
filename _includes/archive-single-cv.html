@@ -12,9 +12,11 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% assign cv_anchor = post.slug | default: post.title | slugify %}
+
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    <li>
+    <li id="cv-pub-{{ cv_anchor }}">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=

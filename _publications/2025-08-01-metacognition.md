@@ -7,7 +7,7 @@ excerpt: 'Demonstrating that language models enhanced with metacognitive capabil
 date: 2025-08-01
 venue: 'arXiv preprint arXiv:2508.17959'
 paperurl: 'https://arxiv.org/abs/2508.17959'
-tutorialurl: 'https://research.ibm.com/publications/sofai-lm-a-cognitive-architecture-for-building-efficient-and-reliable-reasoning-systems-with-llms'
+tutorialurl: 'https://sofai-lm-aaailab.github.io/'
 codeurl: 'https://github.com/SOFAI-LM-AAAILab/SOFAI-LM'
 citation: 'Vedant Khandelwal, Francesca Rossi, Keerthiram Murugesan, Erik Miehling, Murray Campbell, Karthikeyan Natesan Ramamurthy, and Lior Horesh. (2025). &quot;Language Models Coupled with Metacognition Can Outperform Reasoning Models.&quot; <i>arXiv preprint arXiv:2508.17959</i>.'
 header:

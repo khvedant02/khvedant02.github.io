@@ -46,7 +46,8 @@ Tutorials, Labs & Invited Talks
 ======
 * **SOFAI-LM: A Cognitive Architecture for Building Efficient and Reliable Reasoning Systems with LLMs**  
   Quarter Day Lab at AAAI 2026  
-  *Vedant Khandelwal, Francesca Rossi, Vishal Pallagani, Keerthiram Murugesan, and Lior Horesh*
+  *Vedant Khandelwal, Francesca Rossi, Vishal Pallagani, Keerthiram Murugesan, and Lior Horesh*  
+  [SOFAI-LM Lab](https://sofai-lm-aaailab.github.io/)
 
 * **Towards Learning Foundation Models for Heuristic Functions to Solve Pathfinding Problems**  
   Contributing Talk at the GenPlan Workshop, AAAI 2025, February 2025  
