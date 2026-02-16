@@ -25,6 +25,9 @@ header:
       <a class="paper-jump-link" href="#mh-what">What</a>
       <a class="paper-jump-link" href="#mh-how">How</a>
       <a class="paper-jump-link" href="#mh-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="mh-why" class="paper-section paper-anchor">

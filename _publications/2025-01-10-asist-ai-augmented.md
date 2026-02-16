@@ -24,6 +24,9 @@ header:
       <a class="paper-jump-link" href="#paper-what">What</a>
       <a class="paper-jump-link" href="#paper-how">How</a>
       <a class="paper-jump-link" href="#paper-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="paper-why" class="paper-section paper-anchor">
@@ -43,7 +46,7 @@ header:
       </ul>
 
       <figure class="paper-figure">
-        <div class="paper-table-wrap" role="region" aria-label="Table 3: Computer science comparison across systems">
+        <div class="paper-table-wrap" role="region" aria-label="Table 1: Computer science comparison across systems">
           <table class="paper-table">
             <thead>
               <tr>

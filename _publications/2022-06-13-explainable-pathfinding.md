@@ -25,6 +25,9 @@ header:
       <a class="paper-jump-link" href="#xplain-what">What</a>
       <a class="paper-jump-link" href="#xplain-how">How</a>
       <a class="paper-jump-link" href="#xplain-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="xplain-why" class="paper-section paper-anchor">
@@ -56,7 +59,7 @@ header:
     </section>
 
     <section id="xplain-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li>Initialize goal node as a logic program representing solved states.</li>
         <li>Generate sample states and use a planner rho (BFS for Towers of Hanoi) to extract macro-actions.</li>

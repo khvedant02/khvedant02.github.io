@@ -25,6 +25,9 @@ header:
       <a class="paper-jump-link" href="#dep-what">What</a>
       <a class="paper-jump-link" href="#dep-how">How</a>
       <a class="paper-jump-link" href="#dep-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="dep-why" class="paper-section paper-anchor">
@@ -99,7 +102,7 @@ header:
     </section>
 
     <section id="dep-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li><strong>Knowledge-guided phrase extraction:</strong> Map tweet n-grams to cannabis and depression entities using ontology matching (cosine similarity >= 0.75).</li>
         <li><strong>Contextual embeddings:</strong> Use GPT-3 to obtain phrase representations.</li>

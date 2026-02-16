@@ -24,6 +24,9 @@ header:
       <a class="paper-jump-link" href="#spec-what">What</a>
       <a class="paper-jump-link" href="#spec-how">How</a>
       <a class="paper-jump-link" href="#spec-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="spec-why" class="paper-section paper-anchor">

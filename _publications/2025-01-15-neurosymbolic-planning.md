@@ -25,6 +25,9 @@ header:
       <a class="paper-jump-link" href="#nesy-what">What</a>
       <a class="paper-jump-link" href="#nesy-how">How</a>
       <a class="paper-jump-link" href="#nesy-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="nesy-why" class="paper-section paper-anchor">
@@ -56,7 +59,7 @@ header:
     </section>
 
     <section id="nesy-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li><strong>Domain-adapted LLM</strong> interprets user queries and generates candidate plans in natural language.</li>
         <li><strong>Preprocessing interface</strong> converts textual outputs into structured actions and conditions aligned with KG entities.</li>

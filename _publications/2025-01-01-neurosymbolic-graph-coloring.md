@@ -26,6 +26,9 @@ header:
       <a class="paper-jump-link" href="#csp-what">What</a>
       <a class="paper-jump-link" href="#csp-how">How</a>
       <a class="paper-jump-link" href="#csp-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="csp-why" class="paper-section paper-anchor">

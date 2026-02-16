@@ -25,6 +25,9 @@ header:
       <a class="paper-jump-link" href="#fm-what">What</a>
       <a class="paper-jump-link" href="#fm-how">How</a>
       <a class="paper-jump-link" href="#fm-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="fm-why" class="paper-section paper-anchor">
@@ -51,7 +54,7 @@ header:
     </section>
 
     <section id="fm-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li><strong>Domain generation:</strong> PDDLFUSE fuses and randomizes PDDL domains to create diverse training environments.</li>
         <li><strong>Goal augmentation:</strong> Hindsight experience replay (HER) generates additional goals from intermediate states.</li>

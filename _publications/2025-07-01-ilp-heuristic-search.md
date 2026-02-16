@@ -27,6 +27,9 @@ header:
       <a class="paper-jump-link" href="#heur-what">What</a>
       <a class="paper-jump-link" href="#heur-how">How</a>
       <a class="paper-jump-link" href="#heur-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="heur-why" class="paper-section paper-anchor">
@@ -59,7 +62,7 @@ header:
     </section>
 
     <section id="heur-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li>Represent the heuristic as a dictionary mapping cost-to-go values to logic programs.</li>
         <li>Use A* to compute updated path costs for sampled states (multi-step lookahead).</li>

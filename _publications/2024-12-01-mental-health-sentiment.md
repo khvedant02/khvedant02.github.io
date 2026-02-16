@@ -27,6 +27,9 @@ header:
       <a class="paper-jump-link" href="#covid-what">What</a>
       <a class="paper-jump-link" href="#covid-how">How</a>
       <a class="paper-jump-link" href="#covid-key">Key contributions</a>
+      {% if page.paperurl %}
+      <a class="paper-jump-link" href="{{ page.paperurl }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>
+      {% endif %}
     </nav>
 
     <section id="covid-why" class="paper-section paper-anchor">
@@ -51,7 +54,7 @@ header:
     </section>
 
     <section id="covid-how" class="paper-section paper-anchor">
-      <h2>How it works (high level)</h2>
+      <h2>How it works</h2>
       <ul class="paper-list">
         <li><strong>Semantic Gap Management (B1):</strong> Train domain-specific LDA and Word2Vec models; dynamically update lexicons with knowledge bases and neologisms.</li>
         <li><strong>Metadata Scoring (B2):</strong> Compute semantic mapping and proximity scores; normalize index scores as supervision signals.</li>
