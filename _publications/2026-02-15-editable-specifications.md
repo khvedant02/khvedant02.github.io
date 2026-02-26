@@ -5,9 +5,9 @@ category: workshops
 permalink: /publication/2026-aaai-make-editable-specifications
 excerpt: "A neurosymbolic RL framework where editable specifications drive immediate, auditable behavior changes without retraining."
 date: 2026-02-15
-venue: "AAAI-MAKE 2026 (Under Review)"
+venue: "AAAI-MAKE 2026"
 paperurl: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1654&context=aii_fac_pub"
-citation: "Vedant Khandelwal, Hong Yung Yip, and Amit Sheth (2026). &quot;Toward Neurosymbolic Reinforcement Learning via Editable Specifications.&quot; <i>Submitted to AAAI-MAKE 2026 (under review)</i>."
+citation: "Vedant Khandelwal, Hong Yung Yip, and Amit Sheth (2026). &quot;Toward Neurosymbolic Reinforcement Learning via Editable Specifications.&quot; <i>AAAI-MAKE 2026</i>."
 header:
   teaser: /images/publications/kgrl/figure1.png
 ---
