@@ -1,0 +1,85 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Top-K gated macro-actions pipeline</title>
+  <desc id="desc">A pipeline diagram showing macro discovery during training, integration into approximate value iteration, and top-K gated macro selection during search.</desc>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="44" x2="1122" y2="676" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#ECFEFF"/>
+    </linearGradient>
+    <linearGradient id="trainGlow" x1="86" y1="98" x2="610" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#FB923C"/>
+    </linearGradient>
+    <linearGradient id="inferGlow" x1="650" y1="98" x2="1114" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M2 2L11 7L2 12" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="24" y="24" width="1152" height="672" rx="32" fill="url(#bg)"/>
+  <rect x="72" y="70" width="520" height="56" rx="18" fill="url(#trainGlow)" opacity="0.16"/>
+  <rect x="608" y="70" width="520" height="56" rx="18" fill="url(#inferGlow)" opacity="0.16"/>
+
+  <text x="92" y="106" fill="#9A3412" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Training: discover and integrate useful macros</text>
+  <text x="630" y="106" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Inference: gate macro branching at search time</text>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="170" width="220" height="116" rx="24" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+    <text x="116" y="210" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">1. AVI states</text>
+    <text x="116" y="244" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Sample states under the</text>
+    <text x="116" y="272" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">current learned heuristic.</text>
+
+    <rect x="352" y="170" width="220" height="116" rx="24" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+    <text x="376" y="210" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">2. Mine macros</text>
+    <text x="376" y="244" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Extract action subsequences</text>
+    <text x="376" y="272" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">of length 2-5 from GBFS runs.</text>
+
+    <rect x="92" y="348" width="220" height="136" rx="24" fill="#FFFFFF" stroke="#FB923C" stroke-width="2.5"/>
+    <text x="116" y="390" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">3. Score pool</text>
+    <text x="116" y="424" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Optional utility uses support,</text>
+    <text x="116" y="452" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">applicability, benefit, and</text>
+    <text x="116" y="480" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">branching penalty.</text>
+
+    <rect x="352" y="348" width="220" height="136" rx="24" fill="#FFFFFF" stroke="#FB923C" stroke-width="2.5"/>
+    <text x="376" y="390" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">4. Augment AVI</text>
+    <text x="376" y="424" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Add macro landing states to</text>
+    <text x="376" y="452" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">training while Bellman updates</text>
+    <text x="376" y="480" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">remain primitive-only.</text>
+
+    <rect x="670" y="210" width="186" height="104" rx="24" fill="#FFFFFF" stroke="#06B6D4" stroke-width="2.5"/>
+    <text x="694" y="248" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Primitive moves</text>
+    <text x="694" y="280" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">Always keep all b</text>
+    <text x="694" y="306" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">successors.</text>
+
+    <rect x="894" y="210" width="186" height="104" rx="24" fill="#FFFFFF" stroke="#06B6D4" stroke-width="2.5"/>
+    <text x="918" y="248" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Valid macros</text>
+    <text x="918" y="280" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">Enumerate available</text>
+    <text x="918" y="306" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">macro successors.</text>
+
+    <rect x="710" y="386" width="330" height="144" rx="28" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="3"/>
+    <text x="738" y="428" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">5. Top-K gating</text>
+    <text x="738" y="464" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="22">Retain only the K macro successors</text>
+    <text x="738" y="492" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="22">with the lowest heuristic values.</text>
+    <text x="738" y="520" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="22">Completeness is preserved.</text>
+
+    <rect x="760" y="576" width="230" height="74" rx="22" fill="#0F172A"/>
+    <text x="796" y="620" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">Expand at most b + K</text>
+  </g>
+
+  <path d="M312 228H352" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M202 286V348" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M462 286V348" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M572 416H710" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M856 314V386" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M988 314V386" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M876 530V576" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <text x="638" y="166" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">Macro pool transferred to search</text>
+  <path d="M572 170C650 132 736 134 808 160" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 10" marker-end="url(#arrow)"/>
+</svg>
