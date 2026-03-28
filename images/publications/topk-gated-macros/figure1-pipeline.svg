@@ -1,85 +1,114 @@
-<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Top-K gated macro-actions pipeline</title>
-  <desc id="desc">A pipeline diagram showing macro discovery during training, integration into approximate value iteration, and top-K gated macro selection during search.</desc>
+<svg width="1680" height="880" viewBox="0 0 1680 880" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Top-K gated macro-actions end-to-end architecture</title>
+  <desc id="desc">A clear five-stage pipeline showing data generation, AVI training, macro discovery, optional utility scoring, and gated search, with labeled arrows for training flow, optional filtering, and top-K deployment.</desc>
+
   <defs>
-    <linearGradient id="bg" x1="72" y1="44" x2="1122" y2="676" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF7ED"/>
-      <stop offset="1" stop-color="#ECFEFF"/>
+    <linearGradient id="bg" x1="48" y1="40" x2="1632" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EE"/>
+      <stop offset="1" stop-color="#EFFBFF"/>
     </linearGradient>
-    <linearGradient id="trainGlow" x1="86" y1="98" x2="610" y2="98" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F59E0B"/>
-      <stop offset="1" stop-color="#FB923C"/>
-    </linearGradient>
-    <linearGradient id="inferGlow" x1="650" y1="98" x2="1114" y2="98" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#06B6D4"/>
-      <stop offset="1" stop-color="#0EA5E9"/>
-    </linearGradient>
-    <filter id="shadow" x="0" y="0" width="1200" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.12"/>
+
+    <filter id="shadow" x="0" y="0" width="1680" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.12"/>
     </filter>
-    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
-      <path d="M2 2L11 7L2 12" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <marker id="arrowGray" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L12 7L2 12V2Z" fill="#6B7280"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L12 7L2 12V2Z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L12 7L2 12V2Z" fill="#0F766E"/>
+    </marker>
+    <marker id="arrowViolet" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2 2L12 7L2 12V2Z" fill="#7C3AED"/>
     </marker>
   </defs>
 
-  <rect x="24" y="24" width="1152" height="672" rx="32" fill="url(#bg)"/>
-  <rect x="72" y="70" width="520" height="56" rx="18" fill="url(#trainGlow)" opacity="0.16"/>
-  <rect x="608" y="70" width="520" height="56" rx="18" fill="url(#inferGlow)" opacity="0.16"/>
+  <rect x="24" y="24" width="1632" height="832" rx="34" fill="url(#bg)"/>
 
-  <text x="92" y="106" fill="#9A3412" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Training: discover and integrate useful macros</text>
-  <text x="630" y="106" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Inference: gate macro branching at search time</text>
+  <text x="840" y="92" text-anchor="middle" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    Top-K Gated Macro-Actions: End-to-End Pipeline
+  </text>
+  <text x="840" y="126" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Training discovers useful macros; search deploys only the top-K macro successors.
+  </text>
 
   <g filter="url(#shadow)">
-    <rect x="92" y="170" width="220" height="116" rx="24" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
-    <text x="116" y="210" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">1. AVI states</text>
-    <text x="116" y="244" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Sample states under the</text>
-    <text x="116" y="272" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">current learned heuristic.</text>
+    <rect x="90" y="248" width="250" height="188" rx="20" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="3"/>
+    <rect x="112" y="264" width="206" height="36" rx="11" fill="#6B7280"/>
+    <text x="215" y="288" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Data Generation</text>
+    <text x="215" y="336" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="600">Backward walks</text>
+    <text x="215" y="368" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="20">from goal</text>
+    <text x="215" y="400" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="20">k ~ U[1, k_max]</text>
 
-    <rect x="352" y="170" width="220" height="116" rx="24" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
-    <text x="376" y="210" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">2. Mine macros</text>
-    <text x="376" y="244" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Extract action subsequences</text>
-    <text x="376" y="272" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">of length 2-5 from GBFS runs.</text>
+    <rect x="390" y="248" width="250" height="188" rx="20" fill="#FFFFFF" stroke="#60A5FA" stroke-width="3"/>
+    <rect x="412" y="264" width="206" height="36" rx="11" fill="#2563EB"/>
+    <text x="515" y="288" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">AVI Training</text>
+    <text x="515" y="334" text-anchor="middle" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">Bellman targets</text>
+    <text x="515" y="368" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="19">y(s) = min_a [c + h_theta^-]</text>
+    <text x="515" y="402" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="20">update h_theta</text>
 
-    <rect x="92" y="348" width="220" height="136" rx="24" fill="#FFFFFF" stroke="#FB923C" stroke-width="2.5"/>
-    <text x="116" y="390" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">3. Score pool</text>
-    <text x="116" y="424" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Optional utility uses support,</text>
-    <text x="116" y="452" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">applicability, benefit, and</text>
-    <text x="116" y="480" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">branching penalty.</text>
+    <rect x="690" y="248" width="250" height="188" rx="20" fill="#FFFFFF" stroke="#2DD4BF" stroke-width="3"/>
+    <rect x="712" y="264" width="206" height="36" rx="11" fill="#0F766E"/>
+    <text x="815" y="288" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Macro Discovery</text>
+    <text x="815" y="334" text-anchor="middle" fill="#115E59" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">GBFS with h_theta</text>
+    <text x="815" y="368" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="20">pattern mining</text>
+    <text x="815" y="402" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="19">lengths 2-5, tau = 3</text>
 
-    <rect x="352" y="348" width="220" height="136" rx="24" fill="#FFFFFF" stroke="#FB923C" stroke-width="2.5"/>
-    <text x="376" y="390" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">4. Augment AVI</text>
-    <text x="376" y="424" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">Add macro landing states to</text>
-    <text x="376" y="452" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">training while Bellman updates</text>
-    <text x="376" y="480" fill="#7C2D12" font-family="Arial, Helvetica, sans-serif" font-size="21">remain primitive-only.</text>
+    <rect x="990" y="248" width="250" height="188" rx="20" fill="#FFFFFF" stroke="#A78BFA" stroke-width="3" stroke-dasharray="10 10"/>
+    <rect x="1012" y="264" width="206" height="36" rx="11" fill="#7C3AED"/>
+    <text x="1115" y="288" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Utility Scoring</text>
+    <text x="1115" y="334" text-anchor="middle" fill="#5B21B6" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">u(m) ranking</text>
+    <text x="1115" y="368" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="20">top-N filtering</text>
+    <text x="1115" y="402" text-anchor="middle" fill="#6D28D9" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">optional ablation</text>
 
-    <rect x="670" y="210" width="186" height="104" rx="24" fill="#FFFFFF" stroke="#06B6D4" stroke-width="2.5"/>
-    <text x="694" y="248" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Primitive moves</text>
-    <text x="694" y="280" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">Always keep all b</text>
-    <text x="694" y="306" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">successors.</text>
-
-    <rect x="894" y="210" width="186" height="104" rx="24" fill="#FFFFFF" stroke="#06B6D4" stroke-width="2.5"/>
-    <text x="918" y="248" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Valid macros</text>
-    <text x="918" y="280" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">Enumerate available</text>
-    <text x="918" y="306" fill="#155E75" font-family="Arial, Helvetica, sans-serif" font-size="20">macro successors.</text>
-
-    <rect x="710" y="386" width="330" height="144" rx="28" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="3"/>
-    <text x="738" y="428" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">5. Top-K gating</text>
-    <text x="738" y="464" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="22">Retain only the K macro successors</text>
-    <text x="738" y="492" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="22">with the lowest heuristic values.</text>
-    <text x="738" y="520" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="22">Completeness is preserved.</text>
-
-    <rect x="760" y="576" width="230" height="74" rx="22" fill="#0F172A"/>
-    <text x="796" y="620" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">Expand at most b + K</text>
+    <rect x="1290" y="248" width="250" height="188" rx="20" fill="#FFFFFF" stroke="#FB923C" stroke-width="3"/>
+    <rect x="1312" y="264" width="206" height="36" rx="11" fill="#EA580C"/>
+    <text x="1415" y="288" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Gated Search</text>
+    <text x="1415" y="334" text-anchor="middle" fill="#9A3412" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">Batch weighted A*</text>
+    <text x="1415" y="368" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="20">top-K gate on h_theta</text>
+    <text x="1415" y="402" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="20">+ all primitives</text>
   </g>
 
-  <path d="M312 228H352" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M202 286V348" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M462 286V348" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M572 416H710" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M856 314V386" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M988 314V386" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M876 530V576" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M340 342H390" stroke="#6B7280" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowGray)"/>
+  <rect x="316" y="304" width="98" height="28" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="365" y="323" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">states + targets</text>
 
-  <text x="638" y="166" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">Macro pool transferred to search</text>
-  <path d="M572 170C650 132 736 134 808 160" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 10" marker-end="url(#arrow)"/>
+  <path d="M640 342H690" stroke="#2563EB" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <rect x="609" y="304" width="112" height="28" rx="14" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="665" y="323" text-anchor="middle" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">h_theta checkpoints</text>
+
+  <path d="M940 306H970C982 306 990 298 990 286V194C990 182 998 174 1010 174H1280" stroke="#0F766E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowTeal)"/>
+  <rect x="1032" y="150" width="166" height="30" rx="15" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.5"/>
+  <text x="1115" y="170" text-anchor="middle" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">all learned macros</text>
+
+  <path d="M940 374H990" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10" marker-end="url(#arrowTeal)"/>
+  <rect x="917" y="386" width="96" height="28" rx="14" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.5"/>
+  <text x="965" y="405" text-anchor="middle" fill="#0F766E" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">P candidates</text>
+
+  <path d="M1240 374H1290" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10" marker-end="url(#arrowViolet)"/>
+  <rect x="1214" y="386" width="102" height="28" rx="14" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.5"/>
+  <text x="1265" y="405" text-anchor="middle" fill="#6D28D9" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">top-N subset</text>
+
+  <path d="M515 248V134C515 122 525 112 537 112H1393C1405 112 1415 122 1415 134V248" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 10" marker-end="url(#arrowBlue)"/>
+  <rect x="859" y="88" width="112" height="28" rx="14" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="915" y="107" text-anchor="middle" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">trained h_theta</text>
+
+  <path d="M515 436V584C515 596 505 606 493 606H237C225 606 215 596 215 584V436" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 10" marker-end="url(#arrowBlue)"/>
+  <rect x="276" y="618" width="178" height="28" rx="14" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="365" y="637" text-anchor="middle" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">theta^- &lt;- theta sync</text>
+
+  <text x="215" y="710" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">offline (training)</text>
+  <text x="515" y="710" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">offline (training)</text>
+  <text x="815" y="710" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">offline (mining)</text>
+  <text x="1115" y="710" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">offline (scoring)</text>
+  <text x="1415" y="710" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">online (search)</text>
+
+  <rect x="1208" y="756" width="270" height="72" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <path d="M1236 780H1284" stroke="#0F766E" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowTeal)"/>
+  <text x="1342" y="785" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">solid: deployed macro pool</text>
+  <path d="M1236 806H1284" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8" marker-end="url(#arrowViolet)"/>
+  <text x="1346" y="811" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600">dashed: optional / feedback</text>
 </svg>
